@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — VISHVPlus</title>
+<meta name="description" content="Get support for VISHVPlus apps. Submit a ticket directly to our GitHub issue tracker.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="VISHVPlus">
+    </a>
+    <nav class="main-nav">
+      <a href="index.html#apps">Apps</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<section style="padding-top:48px;">
+  <div class="wrap">
+    <h1 style="text-align:center;">Support</h1>
+    <p class="section-sub">
+      Fill in the details below. When you submit, we'll open a pre-filled ticket on our
+      GitHub issue tracker for you to send — no email required. You'll need a free
+      <a href="https://github.com/signup" target="_blank" rel="noopener">GitHub account</a> to submit it.
+    </p>
+
+    <form class="support-form" id="support-form">
+      <div>
+        <label for="app">Which app is this about?</label>
+        <select id="app" name="app">
+          <option value="DesKlock">DesKlock</option>
+          <option value="General">General / Website</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="category">Category</label>
+        <select id="category" name="category">
+          <option value="Bug report">Bug report</option>
+          <option value="Feature request">Feature request</option>
+          <option value="Question">Question</option>
+          <option value="Billing / Purchase issue">Billing / Purchase issue</option>
+          <option value="Privacy">Privacy question</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Short summary of your issue" required>
+      </div>
+
+      <div>
+        <label for="name">Your name (optional, shown in the ticket)</label>
+        <input type="text" id="name" name="name" placeholder="Jane Doe">
+      </div>
+
+      <div>
+        <label for="description">Details</label>
+        <textarea id="description" name="description" placeholder="Describe your issue, steps to reproduce, or your question in detail." required></textarea>
+      </div>
+
+      <button type="submit" class="btn">Open Ticket on GitHub</button>
+    </form>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap" style="max-width:760px;">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>Where can I download your apps?</h3>
+      <p>All VISHVPlus apps are distributed exclusively through the Microsoft Store. See the <a href="index.html#apps">Apps</a> page for links.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>I was charged for an app — where do refunds come from?</h3>
+      <p>Purchases and refunds for Microsoft Store apps are handled by Microsoft, not VISHVPlus directly. Request a refund via your <a href="https://account.microsoft.com/billing/orders" target="_blank" rel="noopener">Microsoft order history</a>. We're happy to help with anything else via a support ticket above.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do I need a GitHub account to get support?</h3>
+      <p>Yes — support tickets are tracked as GitHub issues on our public repository so you can follow progress. Creating a GitHub account is free and takes a minute.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Where is your Privacy Policy?</h3>
+      <p>See our <a href="privacy-policy.html">Privacy Policy</a> page, which covers DesKlock and all VISHVPlus apps.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; <span id="year"></span> VISHVPlus</span>
+    <nav>
+      <a href="index.html#apps">Apps</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const REPO = 'EmeraldWall/VISHVPlus';
+
+document.getElementById('support-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const app = document.getElementById('app').value;
+  const category = document.getElementById('category').value;
+  const subject = document.getElementById('subject').value.trim();
+  const name = document.getElementById('name').value.trim();
+  const description = document.getElementById('description').value.trim();
+
+  const title = `[${app}] [${category}] ${subject}`;
+
+  const bodyLines = [
+    `**App:** ${app}`,
+    `**Category:** ${category}`,
+    name ? `**Reported by:** ${name}` : null,
+    '',
+    '**Details:**',
+    description
+  ].filter(line => line !== null);
+
+  const body = bodyLines.join('\n');
+  const labels = 'support';
+
+  const url = `https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}&labels=${encodeURIComponent(labels)}`;
+
+  window.open(url, '_blank', 'noopener');
+});
+</script>
+</body>
+</html>
