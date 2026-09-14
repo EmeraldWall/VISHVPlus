@@ -11,7 +11,7 @@
 <body>
 
 <header class="site-header">
-  <div class="wrap">
+  <div class="glass-nav">
     <a class="brand" href="../index.html">
       <img src="../assets/logo.png" alt="VISHVPlus">
     </a>
@@ -23,71 +23,141 @@
   </div>
 </header>
 
-<div class="wrap">
-  <div class="app-hero">
-    <div class="app-icon-lg">🕐</div>
-    <div class="app-meta">
-      <h1>DesClock</h1>
-      <p class="tagline">A tiny desktop clock widget with a digital or analog face, fully customizable, and light on RAM.</p>
+<section class="hero-glow hero-app text-center">
+  <div class="wrap">
+    <img class="hero-icon" src="../assets/desclock-icon.png" alt="DesClock icon">
+    <h1 class="display">DesClock</h1>
+    <p class="lede" style="max-width:520px; margin:16px auto 24px; color:rgba(255,255,255,0.75);">
+      A tiny desktop clock widget with a digital or analog face, fully customizable, and light on RAM.
+    </p>
+    <div style="margin-bottom:32px;">
       <span class="pill">Microsoft Store</span>
       <span class="pill">Paid app</span>
       <span class="pill">0.6 MB</span>
       <span class="pill">No telemetry</span>
     </div>
+    <div class="btn-row" style="justify-content:center;">
+      <a class="badge-link" href="https://get.microsoft.com/installer/download/9n9bn0w920h2?referrer=appbadge" target="_blank" rel="noopener">
+        <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft">
+      </a>
+      <a class="btn btn-glass" href="https://github.com/EmeraldWall/DesClock" target="_blank" rel="noopener">View Source on GitHub</a>
+    </div>
   </div>
+</section>
 
-  <div class="card-actions" style="margin-bottom: 32px;">
-    <a class="badge-link" href="https://get.microsoft.com/installer/download/9n9bn0w920h2?referrer=appbadge" target="_blank" rel="noopener">
-      <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft">
-    </a>
+<section class="section-white" style="padding-top:80px;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">About</p>
+      <h2 class="headline">Stays out of your way.</h2>
+      <p class="lede">
+        DesClock sits on your desktop and does one thing well. No taskbar clutter,
+        no background services, no telemetry, and no AI integration.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-tile">
+        <div class="feature-icon">🕑</div>
+        <h3>Digital or analog</h3>
+        <p>Switch between a digital time readout or a classic analog face with hour numbers, both showing the full date underneath.</p>
+      </div>
+      <div class="feature-tile">
+        <div class="feature-icon">🎨</div>
+        <h3>Fully customizable</h3>
+        <p>Pick your own colors, or follow your Windows theme automatically. Choose separate fonts for time and date, adjust opacity, and dial in a soft drop shadow.</p>
+      </div>
+      <div class="feature-tile">
+        <div class="feature-icon">📌</div>
+        <h3>Flexible placement</h3>
+        <p>Drag it anywhere on screen, or snap it to any of 9 screen positions — corners, edges, or center — from Settings.</p>
+      </div>
+      <div class="feature-tile">
+        <div class="feature-icon">🔍</div>
+        <h3>Built for high-DPI</h3>
+        <p>Renders crisp and sharp at any Windows display scaling. Never blurry, never pixelated.</p>
+      </div>
+      <div class="feature-tile">
+        <div class="feature-icon">🪟</div>
+        <h3>Respects your system</h3>
+        <p>Reads your Windows accent color and light/dark theme live — no restart needed. Optional start-with-Windows toggle.</p>
+      </div>
+      <div class="feature-tile">
+        <div class="feature-icon">🔒</div>
+        <h3>Genuinely private</h3>
+        <p>No network access, no data collection, no ads, and no AI integration. Full stop.</p>
+      </div>
+    </div>
   </div>
+</section>
 
-  <section>
-    <h2 class="section-title" style="text-align:left;">About DesClock</h2>
-    <p>
-      DesClock is a lightweight desktop clock widget that sits on your desktop and stays out of your way.
-      No taskbar clutter, no background services, no telemetry, and no AI integration.
-    </p>
+<section class="section-dark">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" style="color:var(--red-bright);">What's New</p>
+      <h2 class="headline">Initial release</h2>
+      <p class="lede" style="color:rgba(255,255,255,0.6);">
+        Digital/analog clock, custom colors and fonts, adjustable shadow and opacity,
+        9-position screen snapping, light/dark/system theming, and a modern, resizable Settings dialog.
+      </p>
+    </div>
 
-    <ul class="feature-list">
-      <li><strong>Digital or analog:</strong> Switch between a digital time readout or a classic analog clock face with hour numbers, both showing the full date underneath.</li>
-      <li><strong>Fully customizable:</strong> Pick your own colors for the clock (or let it follow your Windows light/dark theme automatically), choose separate fonts for the time and date, adjust opacity, and dial in a soft diffused drop shadow to taste.</li>
-      <li><strong>Flexible placement:</strong> Drag it anywhere on screen or snap it to any of 9 screen positions (corners, edges, or center) from Settings.</li>
-      <li><strong>Built for high-DPI displays:</strong> Renders crisp and sharp at any Windows display scaling, not blurry or pixelated.</li>
-      <li><strong>Respects your system:</strong> Reads your Windows accent color and light/dark theme live, with no restart needed when you switch. Optional "start with Windows" toggle if you want it launching automatically at sign-in.</li>
-      <li><strong>Genuinely private:</strong> No network access, no data collection, no ads, and no AI integration.</li>
-    </ul>
+    <div class="spec-grid">
+      <div class="spec-item">
+        <div class="k">Available on</div>
+        <div class="v">PC, Mobile, Surface Hub, HoloLens</div>
+      </div>
+      <div class="spec-item">
+        <div class="k">OS</div>
+        <div class="v">Windows 10 14393.0+</div>
+      </div>
+      <div class="spec-item">
+        <div class="k">Size</div>
+        <div class="v">0.6 MB</div>
+      </div>
+      <div class="spec-item">
+        <div class="k">Language</div>
+        <div class="v">English (US)</div>
+      </div>
+    </div>
 
-    <h3>What's new</h3>
-    <p><strong>Initial release:</strong> digital/analog clock, custom colors and fonts, adjustable shadow and opacity, 9-position screen snapping, light/dark/system theming, and a modern, resizable Settings dialog.</p>
-
-    <h3>System requirements</h3>
-    <ul class="feature-list">
-      <li>Available on: PC, Mobile, Surface Hub, HoloLens</li>
-      <li>OS: Windows 10 version 14393.0 or higher</li>
-      <li>Approximate size: 0.6 MB</li>
-      <li>Supported languages: English (United States)</li>
-    </ul>
-
-    <div class="callout">
+    <div class="callout" style="background:var(--glass-bg-on-dark); border:1px solid var(--glass-border-on-dark); color:rgba(255,255,255,0.7); margin-top:32px;">
       Prices and availability can change on the Microsoft Store without notice. Always check the
-      <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">official DesClock listing</a>
+      <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;">official DesClock listing</a>
       for current pricing, screenshots, and terms before purchasing.
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <h2 class="section-title" style="text-align:left;">Support &amp; Privacy</h2>
-    <p>
+<section class="section-white">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Open Source</p>
+      <h2 class="headline">Built in the open</h2>
+      <p class="lede">
+        DesClock's source code is public on GitHub. Browse the code, follow development,
+        or build it yourself with Visual Studio.
+      </p>
+      <div class="btn-row" style="justify-content:center; margin-top:24px;">
+        <a class="btn btn-dark" href="https://github.com/EmeraldWall/DesClock" target="_blank" rel="noopener">github.com/EmeraldWall/DesClock</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-soft">
+  <div class="wrap" style="max-width:720px; text-align:center;">
+    <h2 class="headline">Support &amp; Privacy</h2>
+    <p class="lede" style="margin: 16px 0 0;">
       Need help with DesClock, found a bug, or have a feature request?
-      <a href="../support.html">Visit the Support page</a> to open a ticket.
+      <a href="../support.html" style="color:var(--red); font-weight:600;">Visit the Support page</a> to open a ticket.
     </p>
-    <p>
+    <p class="lede" style="margin: 8px 0 0;">
       To learn what data DesClock collects and how it's handled, read the
-      <a href="../privacy-policy.html#DesClock">DesClock section of our Privacy Policy</a>.
+      <a href="../privacy-policy.html#DesClock" style="color:var(--red); font-weight:600;">DesClock section of our Privacy Policy</a>.
     </p>
-  </section>
-</div>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="wrap">

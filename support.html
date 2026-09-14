@@ -11,7 +11,7 @@
 <body>
 
 <header class="site-header">
-  <div class="wrap">
+  <div class="glass-nav">
     <a class="brand" href="index.html">
       <img src="assets/logo.png" alt="VISHVPlus">
     </a>
@@ -23,13 +23,19 @@
   </div>
 </header>
 
-<section style="padding-top:48px;">
+<section class="hero-glow hero-simple">
   <div class="wrap">
-    <h1 style="text-align:center;">Support</h1>
-    <p class="section-sub">
+    <p class="eyebrow">We're here to help</p>
+    <h1 class="display" style="font-size:clamp(2.2rem, 5vw, 3.6rem);">Support</h1>
+  </div>
+</section>
+
+<div class="wrap" style="padding-bottom: 40px;">
+  <div class="content-card" style="max-width: 720px; margin-left:auto; margin-right:auto;">
+    <p class="lede text-center" style="margin: 0 0 32px;">
       Fill in the details below. When you submit, we'll open a pre-filled ticket on our
       GitHub issue tracker for you to send — no email required. You'll need a free
-      <a href="https://github.com/signup" target="_blank" rel="noopener">GitHub account</a> to submit it.
+      <a href="https://github.com/signup" target="_blank" rel="noopener" style="color:var(--red); font-weight:600;">GitHub account</a> to submit it.
     </p>
 
     <form class="support-form" id="support-form">
@@ -68,23 +74,25 @@
         <textarea id="description" name="description" placeholder="Describe your issue, steps to reproduce, or your question in detail." required></textarea>
       </div>
 
-      <button type="submit" class="btn">Open Ticket on GitHub</button>
+      <button type="submit" class="btn btn-primary">Open Ticket on GitHub</button>
     </form>
   </div>
-</section>
+</div>
 
-<section class="alt">
+<section class="section-soft">
   <div class="wrap" style="max-width:760px;">
-    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="section-head">
+      <h2 class="headline">Frequently Asked Questions</h2>
+    </div>
 
     <div class="faq-item">
       <h3>Where can I download your apps?</h3>
-      <p>All VISHVPlus apps are distributed exclusively through the Microsoft Store. See the <a href="index.html#apps">Apps</a> page for links.</p>
+      <p>All VISHVPlus apps are distributed exclusively through the Microsoft Store. See the <a href="index.html#apps" style="color:var(--red); font-weight:600;">Apps</a> page for links.</p>
     </div>
 
     <div class="faq-item">
       <h3>I was charged for an app — where do refunds come from?</h3>
-      <p>Purchases and refunds for Microsoft Store apps are handled by Microsoft, not VISHVPlus directly. Request a refund via your <a href="https://account.microsoft.com/billing/orders" target="_blank" rel="noopener">Microsoft order history</a>. We're happy to help with anything else via a support ticket above.</p>
+      <p>Purchases and refunds for Microsoft Store apps are handled by Microsoft, not VISHVPlus directly. Request a refund via your <a href="https://account.microsoft.com/billing/orders" target="_blank" rel="noopener" style="color:var(--red); font-weight:600;">Microsoft order history</a>. We're happy to help with anything else via a support ticket above.</p>
     </div>
 
     <div class="faq-item">
@@ -94,7 +102,7 @@
 
     <div class="faq-item">
       <h3>Where is your Privacy Policy?</h3>
-      <p>See our <a href="privacy-policy.html">Privacy Policy</a> page, which covers DesClock and all VISHVPlus apps.</p>
+      <p>See our <a href="privacy-policy.html" style="color:var(--red); font-weight:600;">Privacy Policy</a> page, which covers DesClock and all VISHVPlus apps.</p>
     </div>
   </div>
 </section>
