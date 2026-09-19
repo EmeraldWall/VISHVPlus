@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
 <title>Privacy Policy — VISHVPlus</title>
 <meta name="description" content="Privacy Policy for VISHVPlus apps on the Microsoft Store, including DesClock.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -31,7 +32,7 @@
 </section>
 
 <div class="wrap" style="padding-bottom: 100px;">
-  <div class="content-card policy" style="max-width: 800px; margin-left:auto; margin-right:auto;">
+  <div class="content-card policy reveal" style="max-width: 800px; margin-left:auto; margin-right:auto;">
   <p class="updated">Last updated: September 10, 2026</p>
 
   <p>
@@ -46,6 +47,27 @@
     below. If an App has no dedicated section yet, the general sections of this policy
     apply to it.
   </p>
+
+  <h3 style="margin-top:1.4em;">The short version</h3>
+  <div class="tldr-grid">
+    <div class="tldr-item">
+      <span class="tldr-icon">🙅</span>
+      <p>No VISHVPlus account, sign-in, or personal info required to use any app.</p>
+    </div>
+    <div class="tldr-item">
+      <span class="tldr-icon">💾</span>
+      <p>Settings and preferences are stored locally on your device, not our servers.</p>
+    </div>
+    <div class="tldr-item">
+      <span class="tldr-icon">🚫</span>
+      <p>We never sell personal information to anyone, under any circumstances.</p>
+    </div>
+    <div class="tldr-item">
+      <span class="tldr-icon">🏬</span>
+      <p>Microsoft handles all purchases — we never see your payment details.</p>
+    </div>
+  </div>
+  <p style="font-size:0.85rem;"><em>This summary is for convenience only — the full policy below is what governs.</em></p>
 
   <h2>1. Information Collected by the Microsoft Store</h2>
   <p>
@@ -152,15 +174,35 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>&copy; <span id="year"></span> VISHVPlus</span>
-    <nav>
-      <a href="index.html#apps">Apps</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="support.html">Support</a>
-    </nav>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="VISHVPlus">
+        <p>Focused Windows apps, published on the Microsoft Store. Private by default, built in the open.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Apps</h4>
+        <a href="apps/DesClock.html">DesClock</a>
+        <a href="index.html#apps">All apps</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="support.html">Support</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="https://github.com/EmeraldWall" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-col">
+        <h4>DesClock</h4>
+        <a href="https://github.com/EmeraldWall/DesClock" target="_blank" rel="noopener">Source Code</a>
+        <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">Microsoft Store</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> VISHVPlus</span>
+      <span>Made for Windows.</span>
+    </div>
   </div>
 </footer>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/main.js"></script>
 </body>
 </html>

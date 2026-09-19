@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
 <title>Support — VISHVPlus</title>
 <meta name="description" content="Get support for VISHVPlus apps. Submit a ticket directly to our GitHub issue tracker.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -31,11 +32,14 @@
 </section>
 
 <div class="wrap" style="padding-bottom: 40px;">
-  <div class="content-card" style="max-width: 720px; margin-left:auto; margin-right:auto;">
-    <p class="lede text-center" style="margin: 0 0 32px;">
+  <div class="content-card reveal" style="max-width: 720px; margin-left:auto; margin-right:auto;">
+    <p class="lede text-center" style="margin: 0 0 12px;">
       Fill in the details below. When you submit, we'll open a pre-filled ticket on our
       GitHub issue tracker for you to send — no email required. You'll need a free
       <a href="https://github.com/signup" target="_blank" rel="noopener" style="color:var(--red); font-weight:600;">GitHub account</a> to submit it.
+    </p>
+    <p class="text-center" style="margin: 0 0 32px; font-size:0.9rem;">
+      <a href="https://github.com/EmeraldWall/VISHVPlus/issues" target="_blank" rel="noopener" style="color:var(--red); font-weight:600;">Browse existing issues →</a>
     </p>
 
     <form class="support-form" id="support-form">
@@ -81,26 +85,26 @@
 
 <section class="section-soft">
   <div class="wrap" style="max-width:760px;">
-    <div class="section-head">
+    <div class="section-head reveal">
       <h2 class="headline">Frequently Asked Questions</h2>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item reveal">
       <h3>Where can I download your apps?</h3>
       <p>All VISHVPlus apps are distributed exclusively through the Microsoft Store. See the <a href="index.html#apps" style="color:var(--red); font-weight:600;">Apps</a> page for links.</p>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item reveal" style="--reveal-delay:0.05s;">
       <h3>I was charged for an app — where do refunds come from?</h3>
       <p>Purchases and refunds for Microsoft Store apps are handled by Microsoft, not VISHVPlus directly. Request a refund via your <a href="https://account.microsoft.com/billing/orders" target="_blank" rel="noopener" style="color:var(--red); font-weight:600;">Microsoft order history</a>. We're happy to help with anything else via a support ticket above.</p>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item reveal" style="--reveal-delay:0.1s;">
       <h3>Do I need a GitHub account to get support?</h3>
       <p>Yes — support tickets are tracked as GitHub issues on our public repository so you can follow progress. Creating a GitHub account is free and takes a minute.</p>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item reveal" style="--reveal-delay:0.15s;">
       <h3>Where is your Privacy Policy?</h3>
       <p>See our <a href="privacy-policy.html" style="color:var(--red); font-weight:600;">Privacy Policy</a> page, which covers DesClock and all VISHVPlus apps.</p>
     </div>
@@ -109,18 +113,37 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>&copy; <span id="year"></span> VISHVPlus</span>
-    <nav>
-      <a href="index.html#apps">Apps</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="support.html">Support</a>
-    </nav>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="VISHVPlus">
+        <p>Focused Windows apps, published on the Microsoft Store. Private by default, built in the open.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Apps</h4>
+        <a href="apps/DesClock.html">DesClock</a>
+        <a href="index.html#apps">All apps</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="support.html">Support</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="https://github.com/EmeraldWall" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-col">
+        <h4>DesClock</h4>
+        <a href="https://github.com/EmeraldWall/DesClock" target="_blank" rel="noopener">Source Code</a>
+        <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">Microsoft Store</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> VISHVPlus</span>
+      <span>Made for Windows.</span>
+    </div>
   </div>
 </footer>
 
+<script src="assets/main.js"></script>
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
 const REPO = 'EmeraldWall/VISHVPlus';
 
 document.getElementById('support-form').addEventListener('submit', function (e) {

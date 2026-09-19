@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
 <title>DesClock — VISHVPlus</title>
 <meta name="description" content="DesClock is a lightweight, customizable digital or analog desktop clock widget for Windows, with no telemetry and no ads. Available on the Microsoft Store.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -40,14 +41,48 @@
       <a class="badge-link" href="https://get.microsoft.com/installer/download/9n9bn0w920h2?referrer=appbadge" target="_blank" rel="noopener">
         <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft">
       </a>
-      <a class="btn btn-glass" href="https://github.com/EmeraldWall/DesClock" target="_blank" rel="noopener">View Source on GitHub</a>
+      <a class="btn btn-glass" href="https://github.com/EmeraldWall/DesClock" target="_blank" rel="noopener"><span>View Source on GitHub</span></a>
     </div>
   </div>
 </section>
 
-<section class="section-white" style="padding-top:80px;">
+<section class="section-dark" style="padding-top:64px;">
   <div class="wrap">
-    <div class="section-head">
+    <div class="clock-demo reveal">
+      <svg class="clock-analog" viewBox="0 0 200 200" aria-hidden="true">
+        <circle class="dial" cx="100" cy="100" r="96"></circle>
+        <line class="tick major" x1="100.0" y1="10.0" x2="100.0" y2="24.0"></line>
+        <line class="tick" x1="145.0" y1="22.1" x2="141.0" y2="29.0"></line>
+        <line class="tick" x1="177.9" y1="55.0" x2="171.0" y2="59.0"></line>
+        <line class="tick major" x1="190.0" y1="100.0" x2="176.0" y2="100.0"></line>
+        <line class="tick" x1="177.9" y1="145.0" x2="171.0" y2="141.0"></line>
+        <line class="tick" x1="145.0" y1="177.9" x2="141.0" y2="171.0"></line>
+        <line class="tick major" x1="100.0" y1="190.0" x2="100.0" y2="176.0"></line>
+        <line class="tick" x1="55.0" y1="177.9" x2="59.0" y2="171.0"></line>
+        <line class="tick" x1="22.1" y1="145.0" x2="29.0" y2="141.0"></line>
+        <line class="tick major" x1="10.0" y1="100.0" x2="24.0" y2="100.0"></line>
+        <line class="tick" x1="22.1" y1="55.0" x2="29.0" y2="59.0"></line>
+        <line class="tick" x1="55.0" y1="22.1" x2="59.0" y2="29.0"></line>
+        <line class="hand hand-hour" id="handHour" x1="100" y1="100" x2="100" y2="58"></line>
+        <line class="hand hand-minute" id="handMinute" x1="100" y1="100" x2="100" y2="36"></line>
+        <line class="hand hand-second" id="handSecond" x1="100" y1="100" x2="100" y2="28"></line>
+        <circle class="pivot" cx="100" cy="100" r="4"></circle>
+      </svg>
+      <div class="clock-demo-digital">
+        <div class="clock-time" id="demoTime">--:--:--</div>
+        <div class="clock-date" id="demoDate">Loading…</div>
+      </div>
+    </div>
+    <p class="clock-caption">
+      A live, ticking preview of DesClock's look — built for this page, not a screenshot.
+      The real thing runs quietly on your Windows desktop, no browser required.
+    </p>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="wrap">
+    <div class="section-head reveal">
       <p class="eyebrow">About</p>
       <h2 class="headline">Stays out of your way.</h2>
       <p class="lede">
@@ -57,32 +92,32 @@
     </div>
 
     <div class="feature-grid">
-      <div class="feature-tile">
+      <div class="feature-tile reveal">
         <div class="feature-icon">🕑</div>
         <h3>Digital or analog</h3>
         <p>Switch between a digital time readout or a classic analog face with hour numbers, both showing the full date underneath.</p>
       </div>
-      <div class="feature-tile">
+      <div class="feature-tile reveal" style="--reveal-delay:0.05s;">
         <div class="feature-icon">🎨</div>
         <h3>Fully customizable</h3>
         <p>Pick your own colors, or follow your Windows theme automatically. Choose separate fonts for time and date, adjust opacity, and dial in a soft drop shadow.</p>
       </div>
-      <div class="feature-tile">
+      <div class="feature-tile reveal" style="--reveal-delay:0.1s;">
         <div class="feature-icon">📌</div>
         <h3>Flexible placement</h3>
         <p>Drag it anywhere on screen, or snap it to any of 9 screen positions — corners, edges, or center — from Settings.</p>
       </div>
-      <div class="feature-tile">
+      <div class="feature-tile reveal" style="--reveal-delay:0.15s;">
         <div class="feature-icon">🔍</div>
         <h3>Built for high-DPI</h3>
         <p>Renders crisp and sharp at any Windows display scaling. Never blurry, never pixelated.</p>
       </div>
-      <div class="feature-tile">
+      <div class="feature-tile reveal" style="--reveal-delay:0.2s;">
         <div class="feature-icon">🪟</div>
         <h3>Respects your system</h3>
         <p>Reads your Windows accent color and light/dark theme live — no restart needed. Optional start-with-Windows toggle.</p>
       </div>
-      <div class="feature-tile">
+      <div class="feature-tile reveal" style="--reveal-delay:0.25s;">
         <div class="feature-icon">🔒</div>
         <h3>Genuinely private</h3>
         <p>No network access, no data collection, no ads, and no AI integration. Full stop.</p>
@@ -91,9 +126,62 @@
   </div>
 </section>
 
+<section class="section-soft">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">By the numbers</p>
+      <h2 class="headline">Small footprint, on purpose.</h2>
+    </div>
+    <div class="stat-grid reveal">
+      <div class="stat-tile">
+        <span class="stat-num" data-target="0.6" data-decimals="1" data-suffix=" MB">0 MB</span>
+        <span class="stat-label">Install size</span>
+      </div>
+      <div class="stat-tile">
+        <span class="stat-num" data-target="9" data-decimals="0">0</span>
+        <span class="stat-label">Screen snap positions</span>
+      </div>
+      <div class="stat-tile">
+        <span class="stat-num" data-target="2" data-decimals="0">0</span>
+        <span class="stat-label">Clock faces to choose from</span>
+      </div>
+      <div class="stat-tile">
+        <span class="stat-num" data-target="0" data-decimals="0">0</span>
+        <span class="stat-label">Network requests, ever</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Getting Started</p>
+      <h2 class="headline">Up and running in a minute.</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <span class="step-num">1</span>
+        <h3>Install from the Store</h3>
+        <p>Get DesClock from the Microsoft Store — it installs in seconds and appears on your desktop right away.</p>
+      </div>
+      <div class="step reveal" style="--reveal-delay:0.1s;">
+        <span class="step-num">2</span>
+        <h3>Open Settings</h3>
+        <p>Right-click the clock, or double-click its system tray icon, to open the resizable Settings window.</p>
+      </div>
+      <div class="step reveal" style="--reveal-delay:0.2s;">
+        <span class="step-num">3</span>
+        <h3>Make it yours</h3>
+        <p>Pick a face, choose colors and fonts, and snap it to the spot on screen where you want it to live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section-dark">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <p class="eyebrow" style="color:var(--red-bright);">What's New</p>
       <h2 class="headline">Initial release</h2>
       <p class="lede" style="color:rgba(255,255,255,0.6);">
@@ -102,7 +190,7 @@
       </p>
     </div>
 
-    <div class="spec-grid">
+    <div class="spec-grid reveal">
       <div class="spec-item">
         <div class="k">Available on</div>
         <div class="v">PC, Mobile, Surface Hub, HoloLens</div>
@@ -131,7 +219,7 @@
 
 <section class="section-white">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <p class="eyebrow">Open Source</p>
       <h2 class="headline">Built in the open</h2>
       <p class="lede">
@@ -161,15 +249,35 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>&copy; <span id="year"></span> VISHVPlus</span>
-    <nav>
-      <a href="../index.html#apps">Apps</a>
-      <a href="../privacy-policy.html">Privacy Policy</a>
-      <a href="../support.html">Support</a>
-    </nav>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/logo.png" alt="VISHVPlus">
+        <p>Focused Windows apps, published on the Microsoft Store. Private by default, built in the open.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Apps</h4>
+        <a href="DesClock.html">DesClock</a>
+        <a href="../index.html#apps">All apps</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="../support.html">Support</a>
+        <a href="../privacy-policy.html">Privacy Policy</a>
+        <a href="https://github.com/EmeraldWall" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-col">
+        <h4>DesClock</h4>
+        <a href="https://github.com/EmeraldWall/DesClock" target="_blank" rel="noopener">Source Code</a>
+        <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">Microsoft Store</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> VISHVPlus</span>
+      <span>Made for Windows.</span>
+    </div>
   </div>
 </footer>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../assets/main.js"></script>
 </body>
 </html>
