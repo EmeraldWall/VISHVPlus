@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
 <title>VISHVPlus — Windows Apps</title>
 <meta name="description" content="VISHVPlus builds focused, reliable Windows apps available on the Microsoft Store. Find support and privacy information for all our apps here.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -32,22 +33,37 @@
       support, privacy, and everything else you need, all in one place.
     </p>
     <div class="btn-row" style="justify-content:center;">
-      <a class="btn btn-glass" href="#apps">Explore Apps</a>
-      <a class="btn btn-glass" href="support.html">Get Support</a>
+      <a class="btn btn-glass" href="#apps"><span>Explore Apps</span></a>
+      <a class="btn btn-glass" href="support.html"><span>Get Support</span></a>
     </div>
   </div>
 </section>
 
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span><strong>No telemetry.</strong> Ever.</span>
+    <span><strong>No ads.</strong> None, anywhere.</span>
+    <span><strong>No AI integration.</strong> Just software that works.</span>
+    <span><strong>Built in the open</strong> on GitHub.</span>
+    <span><strong>Local-first.</strong> Your settings stay on your device.</span>
+    <span><strong>No telemetry.</strong> Ever.</span>
+    <span><strong>No ads.</strong> None, anywhere.</span>
+    <span><strong>No AI integration.</strong> Just software that works.</span>
+    <span><strong>Built in the open</strong> on GitHub.</span>
+    <span><strong>Local-first.</strong> Your settings stay on your device.</span>
+  </div>
+</div>
+
 <section id="apps" class="section-white">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <p class="eyebrow">Our Apps</p>
       <h2 class="headline">Available now</h2>
       <p class="lede">On the Microsoft Store, built to be fast, private, and simple.</p>
     </div>
     <div class="app-grid">
 
-      <div class="app-card">
+      <div class="app-card reveal">
         <div class="app-icon"><img src="assets/desclock-icon.png" alt="" style="width:100%;height:100%;border-radius:inherit;object-fit:cover;"></div>
         <h3>DesClock</h3>
         <p>A tiny desktop clock widget with digital or analog faces, fully customizable, and light on RAM. No telemetry, no ads.</p>
@@ -62,7 +78,7 @@
         </div>
       </div>
 
-      <div class="app-card-more">
+      <div class="app-card-more reveal" style="--reveal-delay:0.1s;">
         More VISHVPlus apps are on the way.<br>Check back soon.
       </div>
 
@@ -70,8 +86,36 @@
   </div>
 </section>
 
+<section class="section-soft">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Why VISHVPlus</p>
+      <h2 class="headline">Software that respects you.</h2>
+      <p class="lede">A few principles every VISHVPlus app is held to, no exceptions.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-tile reveal">
+        <div class="feature-icon">🔒</div>
+        <h3>Privacy first</h3>
+        <p>No telemetry, no analytics, no data collection by default. If an app ever needs to send data anywhere, it's disclosed plainly in that app's privacy section — never buried.</p>
+      </div>
+      <div class="feature-tile reveal" style="--reveal-delay:0.08s;">
+        <div class="feature-icon">🪶</div>
+        <h3>Light by design</h3>
+        <p>Small install sizes, low RAM usage, and no background services running when you're not using the app. Software should stay out of your way.</p>
+      </div>
+      <div class="feature-tile reveal" style="--reveal-delay:0.16s;">
+        <div class="feature-icon">🌱</div>
+        <h3>Built in the open</h3>
+        <p>Source code is public on GitHub wherever possible, so you can see exactly what an app does before you install it — and follow along as it improves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section-dark">
-  <div class="wrap text-center">
+  <div class="wrap text-center reveal">
     <p class="eyebrow">Support</p>
     <h2 class="headline">Need help or have a question?</h2>
     <p class="lede" style="max-width:520px; margin:16px auto 32px; color:rgba(255,255,255,0.65);">
@@ -83,15 +127,35 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>&copy; <span id="year"></span> VISHVPlus</span>
-    <nav>
-      <a href="index.html#apps">Apps</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="support.html">Support</a>
-    </nav>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="VISHVPlus">
+        <p>Focused Windows apps, published on the Microsoft Store. Private by default, built in the open.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Apps</h4>
+        <a href="apps/DesClock.html">DesClock</a>
+        <a href="index.html#apps">All apps</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="support.html">Support</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="https://github.com/EmeraldWall" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-col">
+        <h4>DesClock</h4>
+        <a href="https://github.com/EmeraldWall/DesClock" target="_blank" rel="noopener">Source Code</a>
+        <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">Microsoft Store</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> VISHVPlus</span>
+      <span>Made for Windows.</span>
+    </div>
   </div>
 </footer>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/main.js"></script>
 </body>
 </html>

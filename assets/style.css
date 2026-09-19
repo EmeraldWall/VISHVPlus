@@ -263,10 +263,18 @@ nav.main-nav a:hover { color: #fff; }
   position: relative;
   overflow: hidden;
   color: #fff;
+  background: var(--bg-dark);
+}
+
+.hero-glow::before {
+  content: "";
+  position: absolute;
+  inset: -15% -5%;
   background:
     radial-gradient(ellipse 1100px 700px at 50% -10%, rgba(167, 7, 7, 0.35), transparent 60%),
-    radial-gradient(ellipse 900px 600px at 50% 100%, rgba(167, 7, 7, 0.14), transparent 65%),
-    var(--bg-dark);
+    radial-gradient(ellipse 900px 600px at 50% 100%, rgba(167, 7, 7, 0.14), transparent 65%);
+  transform: translateY(var(--parallax-y, 0px));
+  pointer-events: none;
 }
 
 .hero-glow .wrap { position: relative; z-index: 1; }
@@ -385,7 +393,7 @@ section.section-dark {
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1px;
   background: rgba(0, 0, 0, 0.06);
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -525,27 +533,261 @@ form.support-form textarea { min-height: 140px; resize: vertical; }
 footer.site-footer {
   background: var(--bg-dark);
   color: var(--ink-faint);
-  padding: 40px 0;
+  padding: 56px 0 24px;
   font-size: 0.8rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-footer.site-footer .wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
+/* ---------- Scroll reveal ---------- */
+
+/* Only hide .reveal content once JS (added via a blocking inline script in
+   <head>) confirms it can actually reveal it again — otherwise content would
+   stay invisible forever for no-JS / JS-blocked visitors. */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  transition-delay: var(--reveal-delay, 0s);
 }
 
-footer.site-footer nav a {
+html.js .reveal.in-view { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- Feature ticker ---------- */
+
+.ticker {
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-dark);
+  padding: 18px 0;
+}
+
+.ticker-track {
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  animation: tickerScroll 28s linear infinite;
+}
+
+.ticker-track span {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.ticker-track span strong { color: rgba(255, 255, 255, 0.9); font-weight: 600; }
+
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
+
+/* ---------- Stat grid ---------- */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.stat-tile {
+  background: var(--bg);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--red);
+}
+
+.stat-label {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- How it works / steps ---------- */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  counter-reset: step;
+}
+
+.step { position: relative; padding-left: 4px; }
+
+.step .step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.step h3 { font-size: 1.02rem; margin-bottom: 6px; font-weight: 600; }
+.step p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; }
+
+/* ---------- Live clock demo ---------- */
+
+.clock-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 5vw, 56px);
+  flex-wrap: wrap;
+  padding: 40px;
+  border-radius: var(--radius-xl);
+  background: var(--glass-bg-on-dark);
+  border: 1px solid var(--glass-border-on-dark);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+.clock-analog {
+  width: clamp(140px, 22vw, 180px);
+  height: clamp(140px, 22vw, 180px);
+}
+
+.clock-analog .dial {
+  fill: rgba(255, 255, 255, 0.03);
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 2;
+}
+
+.clock-analog .tick { stroke: rgba(255, 255, 255, 0.35); stroke-width: 2; }
+.clock-analog .tick.major { stroke: rgba(255, 255, 255, 0.6); stroke-width: 3; }
+
+.clock-analog .hand {
+  stroke-linecap: round;
+  transform-origin: 100px 100px;
+  transition: transform 0.25s cubic-bezier(0.4, 2, 0.4, 1);
+}
+
+.clock-analog .hand-hour { stroke: #fff; stroke-width: 6; }
+.clock-analog .hand-minute { stroke: #fff; stroke-width: 4; }
+.clock-analog .hand-second { stroke: var(--red-bright); stroke-width: 2; }
+.clock-analog .pivot { fill: var(--red-bright); }
+
+.clock-demo-digital { text-align: center; }
+
+.clock-time {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.clock-date {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.clock-caption {
+  text-align: center;
+  font-size: 0.85rem;
   color: var(--ink-faint);
-  margin-left: 20px;
+  margin-top: 18px;
+}
+
+/* ---------- TL;DR summary ---------- */
+
+.tldr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 28px 0 8px;
+}
+
+.tldr-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  background: var(--bg-soft);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tldr-item .tldr-icon { font-size: 1.1rem; line-height: 1.3; }
+.tldr-item p { margin: 0; font-size: 0.9rem; color: var(--ink); }
+
+/* ---------- Footer ---------- */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: 32px;
+  padding-bottom: 40px;
+}
+
+.footer-brand img { height: 20px; filter: brightness(0) invert(1); opacity: 0.9; margin-bottom: 12px; }
+.footer-brand p { color: var(--ink-faint); font-size: 0.85rem; max-width: 240px; margin: 0; }
+
+.footer-col h4 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.footer-col a {
+  display: block;
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+  margin-bottom: 10px;
   transition: color 0.15s var(--ease);
 }
 
-footer.site-footer nav a:first-child { margin-left: 0; }
-footer.site-footer nav a:hover { color: #fff; }
+.footer-col a:hover { color: #fff; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+}
+
+@media (max-width: 780px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
 
 @media (max-width: 680px) {
   section { padding: 64px 0; }
@@ -554,6 +796,6 @@ footer.site-footer nav a:hover { color: #fff; }
   .hero-glow.hero-simple { padding: calc(var(--nav-h) + 56px) 0 56px; }
   .content-card { margin-top: -32px; }
   nav.main-nav { gap: 16px; }
-  footer.site-footer .wrap { flex-direction: column; text-align: center; }
-  footer.site-footer nav a { margin: 0 10px; }
+  .clock-demo { padding: 28px; gap: 24px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
 }
