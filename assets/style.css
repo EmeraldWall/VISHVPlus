@@ -295,8 +295,8 @@ nav.main-nav a:hover { color: #fff; }
   width: 104px;
   height: 104px;
   border-radius: 24px;
-  margin-bottom: 28px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  margin: 0 auto 28px;
+  filter: drop-shadow(0 16px 40px rgba(0, 0, 0, 0.5));
 }
 
 .pill {
@@ -312,6 +312,15 @@ nav.main-nav a:hover { color: #fff; }
   font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
   margin: 4px 6px 4px 0;
+}
+
+.pill.pill-soon {
+  margin: 0;
+  background: rgba(167, 7, 7, 0.07);
+  border: 1px solid rgba(167, 7, 7, 0.18);
+  color: var(--red);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 /* ---------- Sections ---------- */
@@ -359,7 +368,7 @@ section.section-dark {
   height: 56px;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
 }
 
 .app-card h3 { font-size: 1.25rem; }
@@ -715,6 +724,93 @@ html.js .reveal.in-view { opacity: 1; transform: none; }
   font-size: 0.85rem;
   color: var(--ink-faint);
   margin-top: 18px;
+}
+
+/* ---------- OCR "make searchable" illustration ---------- */
+
+.ocr-demo {
+  display: flex;
+  align-items: center;
+  gap: clamp(28px, 6vw, 72px);
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: clamp(28px, 5vw, 48px);
+  border-radius: var(--radius-xl);
+  background: var(--glass-bg-on-dark);
+  border: 1px solid var(--glass-border-on-dark);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+.ocr-page {
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 260px;
+  flex-shrink: 0;
+  padding: 36px 24px;
+  border-radius: 10px;
+  background: #f4f1ea;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ocr-line {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  background: #8a8478;
+  filter: blur(1.5px);
+  animation: ocrSharpen 4s var(--ease) infinite;
+}
+
+.ocr-line:nth-of-type(2) { animation-delay: 0.25s; }
+.ocr-line:nth-of-type(3) { animation-delay: 0.5s; }
+.ocr-line:nth-of-type(4) { animation-delay: 0.75s; }
+.ocr-line:nth-of-type(5) { animation-delay: 1s; }
+.ocr-line:nth-of-type(6) { animation-delay: 1.25s; }
+.ocr-line:nth-of-type(7) { animation-delay: 1.5s; }
+
+.ocr-line.hit { animation-name: ocrSharpenHit; }
+
+.ocr-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: var(--red-bright);
+  box-shadow: 0 0 18px 4px rgba(255, 69, 58, 0.55);
+  animation: ocrScan 4s var(--ease) infinite;
+}
+
+.ocr-copy { flex: 1 1 320px; max-width: 460px; }
+.ocr-copy .headline { margin-bottom: 14px; }
+
+@keyframes ocrScan {
+  0% { transform: translateY(0); opacity: 0; }
+  8% { opacity: 1; }
+  55% { transform: translateY(258px); opacity: 1; }
+  62%, 100% { transform: translateY(258px); opacity: 0; }
+}
+
+@keyframes ocrSharpen {
+  0%, 10% { filter: blur(1.5px); background: #8a8478; }
+  45%, 90% { filter: blur(0); background: #2b2925; }
+  100% { filter: blur(1.5px); background: #8a8478; }
+}
+
+@keyframes ocrSharpenHit {
+  0%, 10% { filter: blur(1.5px); background: #8a8478; box-shadow: none; }
+  45%, 90% { filter: blur(0); background: #2b2925; box-shadow: 0 0 0 5px rgba(255, 214, 10, 0.55); }
+  100% { filter: blur(1.5px); background: #8a8478; box-shadow: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ocr-line, .ocr-line.hit { animation: none; filter: none; background: #2b2925; }
+  .ocr-scan { display: none; }
 }
 
 /* ---------- TL;DR summary ---------- */
