@@ -4,171 +4,217 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>document.documentElement.classList.add('js');</script>
-<title>VISHVPlus — Windows Apps</title>
-<meta name="description" content="VISHVPlus builds focused, reliable Windows apps available on the Microsoft Store. Find support and privacy information for all our apps here.">
+<title>VISHVPlus — Focused apps for Windows</title>
+<meta name="description" content="VISHVPlus makes focused, private Windows apps: DesClock, a lightweight desktop clock, and VisaryPDF, a PDF reader, editor and converter with on-device OCR.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="VISHVPlus">
-    </a>
-    <nav class="main-nav">
-      <a href="index.html#apps">Apps</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html"><img src="assets/logo-mark.png" alt="VISHVPlus"></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html" class="is-active">Home</a>
+      <a href="index.html#lineup">Apps</a>
+      <a href="apps/DesClock.html">DesClock</a>
+      <a href="apps/VisaryPDF.html">VisaryPDF</a>
       <a href="support.html">Support</a>
+      <a href="privacy-policy.html">Privacy</a>
     </nav>
+    <a class="nav-cta" href="index.html#lineup">Get the apps</a>
   </div>
 </header>
+<main class="frame">
 
-<section class="hero-glow hero-home">
-  <div class="wrap">
-    <img class="hero-logo" src="assets/logo.png" alt="VISHVPlus">
-    <h1 class="display">Windows apps,<br>made simple.</h1>
-    <p class="lede" style="max-width:560px; margin:20px auto 36px; color:rgba(255,255,255,0.75);">
-      VISHVPlus builds focused Windows apps published on the Microsoft Store —
-      support, privacy, and everything else you need, all in one place.
-    </p>
-    <div class="btn-row" style="justify-content:center;">
-      <a class="btn btn-glass" href="#apps"><span>Explore Apps</span></a>
-      <a class="btn btn-glass" href="support.html"><span>Get Support</span></a>
+<section class="hero" data-rail="Home" id="top">
+  <div class="orbit" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+  <div class="float fcard f-icon f-dc" style="left:9%;top:16%;--r:-6deg;--d:-1s"><img src="assets/desclock-icon.png" alt=""></div>
+  <div class="float fcard f-icon hide-sm" style="right:10%;top:62%;--r:5deg;--d:-4s;--dx:-8px"><img src="assets/visarypdf-icon.png" alt=""></div>
+  <div class="float fcard f-clock hide-sm" style="right:12%;top:13%;--r:3deg;--d:-2s"><div class="t" data-clock="time">12:00</div><div class="d" data-clock="date" data-style="short">Today</div></div>
+  <div class="float fcard f-analog hide-sm" style="left:15%;top:62%;--d:-6s;--dx:10px"><svg class="clock-svg" viewBox="0 0 200 200" aria-hidden="true"><circle class="dial" cx="100" cy="100" r="96"></circle><line class="tick major" x1="100.0" y1="10.0" x2="100.0" y2="22.0"></line><line class="tick" x1="145.0" y1="22.1" x2="141.5" y2="28.1"></line><line class="tick" x1="177.9" y1="55.0" x2="171.9" y2="58.5"></line><line class="tick major" x1="190.0" y1="100.0" x2="178.0" y2="100.0"></line><line class="tick" x1="177.9" y1="145.0" x2="171.9" y2="141.5"></line><line class="tick" x1="145.0" y1="177.9" x2="141.5" y2="171.9"></line><line class="tick major" x1="100.0" y1="190.0" x2="100.0" y2="178.0"></line><line class="tick" x1="55.0" y1="177.9" x2="58.5" y2="171.9"></line><line class="tick" x1="22.1" y1="145.0" x2="28.1" y2="141.5"></line><line class="tick major" x1="10.0" y1="100.0" x2="22.0" y2="100.0"></line><line class="tick" x1="22.1" y1="55.0" x2="28.1" y2="58.5"></line><line class="tick" x1="55.0" y1="22.1" x2="58.5" y2="28.1"></line><line class="hand hand-hour" data-clock="hour" x1="100" y1="100" x2="100" y2="58"></line><line class="hand hand-minute" data-clock="minute" x1="100" y1="100" x2="100" y2="34"></line><line class="hand hand-second" data-clock="second" x1="100" y1="112" x2="100" y2="26"></line><circle class="pivot" cx="100" cy="100" r="4.5"></circle></svg></div>
+  <div class="float fcard f-page hide-md" style="left:27%;top:5%;--r:-4deg;--d:-3s;--dy:8px"><i></i><i></i><i class="hl"></i><i></i><i style="width:70%"></i><i></i></div>
+  <div class="float fcard f-sign hide-md" style="right:24%;top:80%;--r:-2deg;--d:-5s"><svg viewBox="0 0 300 80" preserveAspectRatio="none"><path d="M8 58 C 22 14, 44 10, 38 52 S 62 70, 76 34 S 100 18, 104 50 S 128 66, 140 40 C 150 22, 166 28, 160 50 S 186 60, 200 36 S 232 26, 290 44" fill="none" stroke="#1d3fa8" stroke-width="3" stroke-linecap="round"></path></svg><div class="line mono">Signed</div></div>
+  <div class="float fcard f-chip mono hide-md" style="left:4%;top:44%;--d:-7s">OCR &middot; on-device</div>
+  <div class="float fcard f-chip mono hide-md" style="right:3%;top:40%;--d:-2.5s;--dy:12px">9 snap positions</div>
+  <div class="float fcard f-chip mono hide-sm" style="left:30%;top:86%;--d:-8s">No telemetry</div>
+
+  <div class="hero-center">
+    <img class="hero-logo" src="assets/logo-mark.png" alt="VISHVPlus">
+    <h1 class="hero-tagline">Focused apps <span class="serif">for Windows.</span></h1>
+    <p class="hero-sub">VISHVPlus makes small, careful Windows apps that do one job well, keep your data on your PC, and stay out of your way.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn btn-dark" href="#lineup">Explore the apps</a>
+      <a class="btn btn-line" href="support.html">Get support</a>
     </div>
+    <p class="hero-meta mono">Microsoft Store &middot; Windows 10 &amp; 11</p>
+    <p class="hero-meta mono">No account &middot; No ads &middot; No telemetry</p>
   </div>
 </section>
 
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span><strong>No telemetry.</strong> Ever.</span>
-    <span><strong>No ads.</strong> None, anywhere.</span>
-    <span><strong>No AI integration.</strong> Just software that works.</span>
-    <span><strong>Made for Windows</strong>, crisp at any display scale.</span>
-    <span><strong>Local-first.</strong> Your settings stay on your device.</span>
-    <span><strong>No telemetry.</strong> Ever.</span>
-    <span><strong>No ads.</strong> None, anywhere.</span>
-    <span><strong>No AI integration.</strong> Just software that works.</span>
-    <span><strong>Made for Windows</strong>, crisp at any display scale.</span>
-    <span><strong>Local-first.</strong> Your settings stay on your device.</span>
+<div class="ticker mono" aria-hidden="true"><div class="ticker-track"><span>DesClock</span><span>VisaryPDF</span><span>Digital or analog</span><span>Fill &amp; sign</span><span>On-device OCR</span><span>9 snap positions</span><span>Export to Word</span><span>No telemetry</span><span>No ads</span><span>Windows 10 &amp; 11</span><span>DesClock</span><span>VisaryPDF</span><span>Digital or analog</span><span>Fill &amp; sign</span><span>On-device OCR</span><span>9 snap positions</span><span>Export to Word</span><span>No telemetry</span><span>No ads</span><span>Windows 10 &amp; 11</span></div></div>
+
+<section class="section" id="lineup" data-rail="Lineup">
+  <div class="label-row mono"><span>01 / The lineup</span><span>Two apps &middot; Microsoft Store</span></div>
+  <div class="pad stack reveal">
+    <h2 class="h-xl">Small apps, <span class="serif">made with care.</span></h2>
+    <p class="lead">Each VISHVPlus app solves one everyday job on Windows, starts fast and keeps everything on your PC. Pick one to explore.</p>
   </div>
+  <div class="grid g-3 lineup" style="border-top:1px solid var(--hair)">
+    <article class="card reveal" style="--rd:0s">
+  <div class="card-top mono"><span class="num-tag clock">01</span><span>Desktop clock widget</span></div>
+  <div class="card-visual" style="aspect-ratio:16 / 10"><div class="mock wallpaper"><div class="widget-analog" style="left:6%;top:9%;"><svg class="clock-svg" viewBox="0 0 200 200" aria-hidden="true"><circle class="dial" cx="100" cy="100" r="96"></circle><line class="tick major" x1="100.0" y1="10.0" x2="100.0" y2="22.0"></line><line class="tick" x1="145.0" y1="22.1" x2="141.5" y2="28.1"></line><line class="tick" x1="177.9" y1="55.0" x2="171.9" y2="58.5"></line><line class="tick major" x1="190.0" y1="100.0" x2="178.0" y2="100.0"></line><line class="tick" x1="177.9" y1="145.0" x2="171.9" y2="141.5"></line><line class="tick" x1="145.0" y1="177.9" x2="141.5" y2="171.9"></line><line class="tick major" x1="100.0" y1="190.0" x2="100.0" y2="178.0"></line><line class="tick" x1="55.0" y1="177.9" x2="58.5" y2="171.9"></line><line class="tick" x1="22.1" y1="145.0" x2="28.1" y2="141.5"></line><line class="tick major" x1="10.0" y1="100.0" x2="22.0" y2="100.0"></line><line class="tick" x1="22.1" y1="55.0" x2="28.1" y2="58.5"></line><line class="tick" x1="55.0" y1="22.1" x2="58.5" y2="28.1"></line><text class="num" x="100" y="36">12</text><text class="num" x="164" y="100">3</text><text class="num" x="100" y="164">6</text><text class="num" x="36" y="100">9</text><line class="hand hand-hour" data-clock="hour" x1="100" y1="100" x2="100" y2="58"></line><line class="hand hand-minute" data-clock="minute" x1="100" y1="100" x2="100" y2="34"></line><line class="hand hand-second" data-clock="second" x1="100" y1="112" x2="100" y2="26"></line><circle class="pivot" cx="100" cy="100" r="4.5"></circle></svg></div><div class="widget-digital sm" style="right:6%;top:9%;text-align:right;"><div class="t" data-clock="time">12:00</div><div class="d" data-clock="date">Today</div></div><div class="taskbar"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+  <div class="card-body">
+    <div class="card-icon"><img src="assets/desclock-icon.png" alt=""></div>
+    <h3 class="app-name">Des<span class="t-clock">Clock</span></h3>
+    <p>A tiny digital or analog clock for your desktop. Fully customizable, light on memory, and it never touches the network.</p>
+    <div class="chips"><span class="chip chip-ok">Available now</span><span class="chip">Microsoft Store</span><span class="chip">Windows 10 &middot; 11</span><span class="chip">0.6 MB</span></div>
+    <a class="arrow-link" href="apps/DesClock.html">Explore DesClock &nearr;</a>
+  </div>
+</article>
+    <article class="card reveal" style="--rd:.08s">
+  <div class="card-top mono"><span class="num-tag pdf">02</span><span>PDF reader &amp; editor</span></div>
+  <div class="card-visual" style="aspect-ratio:16 / 10"><div class="mock" style="background:#d9d5cc"><div class="win"><div class="win-bar"><span class="menu"></span><span class="win-tab on">Lease agreement.pdf</span><span class="win-tab">Invoice-0921.pdf</span><span class="win-tab">Scan 14.pdf</span><span class="win-dots"><i></i><i></i><i></i></span></div><div class="win-body"><div class="thumbs"><i></i><i class="on"></i><i></i><i></i></div><div class="stage"><div class="page"><span class="title"></span><i></i><i></i><i class="short"></i><i></i><i class="hl"></i><i></i><i class="short"></i><i></i><i></i><i class="short"></i></div><div class="toolrail"><i></i><i></i><i></i><i></i><i></i></div><span class="pager">2 / 12 &middot; 100%</span></div></div></div></div></div>
+  <div class="card-body">
+    <div class="card-icon"><img src="assets/visarypdf-icon.png" alt=""></div>
+    <h3 class="app-name">Visary<span class="t-pdf">PDF</span></h3>
+    <p>Read, edit, fill, sign and convert PDFs, with OCR that turns scans into searchable text right on your PC.</p>
+    <div class="chips"><span class="chip chip-ok">Available now</span><span class="chip">Microsoft Store</span><span class="chip">Windows 10 &middot; 11</span><span class="chip">x64 &middot; ARM64</span></div>
+    <a class="arrow-link" href="apps/VisaryPDF.html">Explore VisaryPDF &nearr;</a>
+  </div>
+</article>
+    <div class="next-cell reveal" style="--rd:.16s">
+  <span class="mono" style="color:var(--faint)">Next up</span>
+  <h3 class="h-lg" style="font-size:26px">More apps <span class="serif">on the way.</span></h3>
+  <p class="note">New VISHVPlus apps follow the same rules: private by default, light on your PC, and nothing you didn't ask for.</p>
+  <p class="note">Have an idea for what we should build next? Tell us through a support ticket.</p>
+  <div style="margin-top:auto"><a class="btn btn-dark" href="support.html">Suggest an app</a></div>
 </div>
-
-<section id="apps" class="section-white">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Our Apps</p>
-      <h2 class="headline">Made for Windows</h2>
-      <p class="lede">On the Microsoft Store, built to be fast, private, and simple.</p>
-    </div>
-    <div class="app-grid">
-
-      <div class="app-card reveal">
-        <div class="app-icon"><img src="assets/desclock-icon.png" alt="" style="width:100%;height:100%;border-radius:inherit;object-fit:cover;"></div>
-        <h3>DesClock</h3>
-        <p>A tiny desktop clock widget with digital or analog faces, fully customizable, and light on RAM. No telemetry, no ads.</p>
-        <div class="card-actions">
-          <a href="apps/DesClock.html">Learn more →</a>
-        </div>
-        <div class="card-actions">
-          <a class="badge-link" href="https://get.microsoft.com/installer/download/9n9bn0w920h2?referrer=appbadge" target="_blank" rel="noopener">
-            <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft">
-          </a>
-        </div>
-      </div>
-
-      <div class="app-card reveal" style="--reveal-delay:0.08s;">
-        <div class="app-icon" style="overflow:visible;"><img src="assets/visarypdf-icon.png" alt="" style="width:100%;height:100%;object-fit:contain;"></div>
-        <h3>VisaryPDF</h3>
-        <p>Read, edit, fill, sign and convert PDFs, with OCR that turns scanned pages into searchable text right on your PC.</p>
-        <div class="card-actions">
-          <a href="apps/VisaryPDF.html">Learn more →</a>
-        </div>
-        <div class="card-actions">
-          <a class="badge-link" href="https://get.microsoft.com/installer/download/9p708bjjzgdn?referrer=appbadge" target="_blank" rel="noopener">
-            <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get VisaryPDF from Microsoft">
-          </a>
-        </div>
-      </div>
-
-      <div class="app-card-more reveal" style="--reveal-delay:0.16s;">
-        More VISHVPlus apps are on the way.<br>Check back soon.
-      </div>
-
-    </div>
   </div>
 </section>
 
-<section class="section-soft">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Why VISHVPlus</p>
-      <h2 class="headline">Software that respects you.</h2>
-      <p class="lede">A few principles every VISHVPlus app is held to, no exceptions.</p>
-    </div>
-
-    <div class="feature-grid">
-      <div class="feature-tile reveal">
-        <div class="feature-icon">🔒</div>
-        <h3>Privacy first</h3>
-        <p>No telemetry, no analytics, no data collection by default. If an app ever needs to send data anywhere, it's disclosed plainly in that app's privacy section — never buried.</p>
-      </div>
-      <div class="feature-tile reveal" style="--reveal-delay:0.08s;">
-        <div class="feature-icon">🪶</div>
-        <h3>Light by design</h3>
-        <p>Small install sizes, low RAM usage, and no background services running when you're not using the app. Software should stay out of your way.</p>
-      </div>
-      <div class="feature-tile reveal" style="--reveal-delay:0.16s;">
-        <div class="feature-icon">✨</div>
-        <h3>Nothing extra</h3>
-        <p>No ads, no upsells, and no AI bolted on. Each app does one job well, and every change is about making that job better.</p>
-      </div>
-    </div>
+<section class="section" id="inside" data-rail="Inside">
+  <div class="label-row mono"><span>02 / Inside the apps</span><span>Illustrations of real features</span></div>
+  <div class="pad stack reveal">
+    <h2 class="h-xl">Every feature <span class="serif">earns its place.</span></h2>
+    <p class="lead">No bloat and no filler: just the tools you reach for, built to feel at home on Windows.</p>
+  </div>
+  <div class="grid g-2" style="border-top:1px solid var(--hair)">
+    <div class="reveal" style="--rd:0s">
+  <div class="card-top mono"><span>DesClock &middot; Faces</span><span>01</span></div>
+  <div class="card-visual" style="aspect-ratio:16 / 10"><div class="mock wallpaper"><div class="widget-analog" style="left:6%;top:9%;"><svg class="clock-svg" viewBox="0 0 200 200" aria-hidden="true"><circle class="dial" cx="100" cy="100" r="96"></circle><line class="tick major" x1="100.0" y1="10.0" x2="100.0" y2="22.0"></line><line class="tick" x1="145.0" y1="22.1" x2="141.5" y2="28.1"></line><line class="tick" x1="177.9" y1="55.0" x2="171.9" y2="58.5"></line><line class="tick major" x1="190.0" y1="100.0" x2="178.0" y2="100.0"></line><line class="tick" x1="177.9" y1="145.0" x2="171.9" y2="141.5"></line><line class="tick" x1="145.0" y1="177.9" x2="141.5" y2="171.9"></line><line class="tick major" x1="100.0" y1="190.0" x2="100.0" y2="178.0"></line><line class="tick" x1="55.0" y1="177.9" x2="58.5" y2="171.9"></line><line class="tick" x1="22.1" y1="145.0" x2="28.1" y2="141.5"></line><line class="tick major" x1="10.0" y1="100.0" x2="22.0" y2="100.0"></line><line class="tick" x1="22.1" y1="55.0" x2="28.1" y2="58.5"></line><line class="tick" x1="55.0" y1="22.1" x2="58.5" y2="28.1"></line><text class="num" x="100" y="36">12</text><text class="num" x="164" y="100">3</text><text class="num" x="100" y="164">6</text><text class="num" x="36" y="100">9</text><line class="hand hand-hour" data-clock="hour" x1="100" y1="100" x2="100" y2="58"></line><line class="hand hand-minute" data-clock="minute" x1="100" y1="100" x2="100" y2="34"></line><line class="hand hand-second" data-clock="second" x1="100" y1="112" x2="100" y2="26"></line><circle class="pivot" cx="100" cy="100" r="4.5"></circle></svg></div><div class="widget-digital" style="right:6%;top:9%;text-align:right;"><div class="t" data-clock="time">12:00</div><div class="d" data-clock="date">Today</div></div><div class="taskbar"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+  <div class="cell"><h3>Digital or analog</h3><p>A crisp digital readout or a classic analog face with hour numbers, both with the full date underneath.</p></div>
+</div>
+    <div class="reveal" style="--rd:.08s">
+  <div class="card-top mono"><span>VisaryPDF &middot; Fill &amp; sign</span><span>02</span></div>
+  <div class="card-visual" style="aspect-ratio:16 / 10"><div class="mock sign-scene"><div class="form-page"><div class="form-row"><label>Full name</label><span class="field">Jordan Rivera</span></div><div class="form-row"><label>Date</label><span class="field"><span data-clock="date" data-style="short">Today</span></span></div><div class="form-row"><label>I agree</label><span class="box on"></span><label style="width:auto">Paperless copy</label><span class="box"></span></div><div class="sig"><svg viewBox="0 0 300 80" preserveAspectRatio="none"><path class="sig-path" d="M8 58 C 22 14, 44 10, 38 52 S 62 70, 76 34 S 100 18, 104 50 S 128 66, 140 40 C 150 22, 166 28, 160 50 S 186 60, 200 36 S 232 26, 290 44"></path></svg><span class="sig-date">SIGNED</span></div></div></div></div>
+  <div class="cell"><h3>Fill and sign in seconds</h3><p>Fill text fields, check boxes and drop-downs, then sign by drawing, typing or using an image.</p></div>
+</div>
+    <div class="reveal" style="--rd:0s">
+  <div class="card-top mono"><span>VisaryPDF &middot; OCR</span><span>03</span></div>
+  <div class="card-visual" style="aspect-ratio:16 / 10"><div class="mock scan-scene"><div class="scan-page"><span class="scan-bar"></span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="search-pill">Find: <b>invoice total</b> &middot; 1 of 3</div></div></div>
+  <div class="cell"><h3>Scans become searchable</h3><p>Make searchable adds a hidden text layer to scanned pages using the OCR built into Windows, so it never leaves your PC.</p></div>
+</div>
+    <div class="reveal" style="--rd:.08s">
+  <div class="card-top mono"><span>DesClock &middot; Placement</span><span>04</span></div>
+  <div class="card-visual" style="aspect-ratio:16 / 10"><div class="mock wallpaper night"><div class="snap-grid"><b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b></div><div class="widget-digital sm" style="right:8%;top:22%;text-align:right;opacity:.92;"><div class="t" data-clock="time">12:00</div></div><div class="taskbar"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+  <div class="cell"><h3>Snap to 9 positions</h3><p>Drag the clock anywhere, or snap it to a corner, an edge or the center of the screen from Settings.</p></div>
+</div>
+    <div class="reveal" style="--rd:0s">
+  <div class="card-top mono"><span>VisaryPDF &middot; Convert</span><span>05</span></div>
+  <div class="card-visual" style="aspect-ratio:16 / 10"><div class="mock export-scene"><span class="file src">PDF</span><span class="flow-arrow">&rarr;</span><div class="out"><div class="row"><span class="file">DOCX</span><span>Word document</span></div><div class="row"><span class="file">TXT</span><span>Plain text</span></div><div class="row"><span class="file">PNG</span><span>Images, by page range</span></div><div class="row"><span class="file">JPG</span><span>Images, chosen DPI</span></div></div></div></div>
+  <div class="cell"><h3>Convert in one step</h3><p>Export to Word, plain text, PNG or JPEG, turn images into a PDF, or merge several PDFs into one.</p></div>
+</div>
+    <div class="reveal" style="--rd:.08s">
+  <div class="card-top mono"><span>DesClock &middot; Style</span><span>06</span></div>
+  <div class="card-visual" style="aspect-ratio:16 / 10"><div class="mock custom-panel"><div><span class="mono" style="color:var(--muted)">Clock color</span><div class="swatches"><i style="background:#ffffff"></i><i class="on" style="background:#2d63e8"></i><i style="background:#e0632c"></i><i style="background:#1f7a46"></i><i style="background:#151515"></i></div><span class="mono" style="color:var(--muted)">Opacity</span><div class="slider" style="--v:78%"></div></div><div><span class="mono" style="color:var(--muted)">Time &amp; date fonts</span><div class="font-sample" style="font-family:var(--sans)">10:42</div><div class="font-sample" style="font-family:var(--serif);font-style:italic;font-weight:400">10:42</div><div class="font-sample" style="font-family:var(--mono);font-weight:500">10:42</div></div></div></div>
+  <div class="cell"><h3>Make it yours</h3><p>Your own colors or your Windows theme, separate fonts for time and date, opacity and a soft drop shadow.</p></div>
+</div>
   </div>
 </section>
 
-<section class="section-dark">
-  <div class="wrap text-center reveal">
-    <p class="eyebrow">Support</p>
-    <h2 class="headline">Need help or have a question?</h2>
-    <p class="lede" style="max-width:520px; margin:16px auto 32px; color:rgba(255,255,255,0.65);">
-      Every app on this page has its own support and privacy resources.
-    </p>
-    <a class="btn btn-primary" href="support.html">Get Support</a>
+<section class="section" id="principles" data-rail="Principles">
+  <div class="label-row mono"><span>03 / Principles</span><span>Shared by every app</span></div>
+  <div class="pad stack reveal">
+    <h2 class="h-xl">Built to <span class="serif">stay out</span> of your way.</h2>
+    <p class="lead">Every VISHVPlus app is held to the same short list of rules.</p>
+  </div>
+  <div class="grid g-3" style="border-top:1px solid var(--hair)">
+    <div class="cell reveal" style="--rd:0s">
+  <div class="cell-head mono"><span class="icon-box">&#9711;</span><span>01</span></div>
+  <h3>Private by default</h3>
+  <p>No telemetry and no analytics. If an app ever needed to send data anywhere, its privacy section would say so plainly first.</p>
+</div>
+    <div class="cell reveal" style="--rd:.05s">
+  <div class="cell-head mono"><span class="icon-box">&#9634;</span><span>02</span></div>
+  <h3>Your files, your PC</h3>
+  <p>Documents, settings and saved signatures stay on your device. There are no cloud uploads and no accounts to create.</p>
+</div>
+    <div class="cell reveal" style="--rd:.1s">
+  <div class="cell-head mono"><span class="icon-box">&#8771;</span><span>03</span></div>
+  <h3>Light by design</h3>
+  <p>Small installs, low memory use, and nothing running in the background that you didn't start.</p>
+</div>
+    <div class="cell reveal" style="--rd:0s">
+  <div class="cell-head mono"><span class="icon-box">&#9638;</span><span>04</span></div>
+  <h3>Made for Windows</h3>
+  <p>Apps follow your Windows theme, stay sharp at any display scale and work with the keyboard.</p>
+</div>
+    <div class="cell reveal" style="--rd:.05s">
+  <div class="cell-head mono"><span class="icon-box">&#10005;</span><span>05</span></div>
+  <h3>Nothing extra</h3>
+  <p>No ads, no upsells and no AI bolted on. Each app does its job and gets out of the way.</p>
+</div>
+    <div class="cell reveal" style="--rd:.1s">
+  <div class="cell-head mono"><span class="icon-box">&#10003;</span><span>06</span></div>
+  <h3>Real support</h3>
+  <p>Every app has its own support page and privacy section, and every ticket is read.</p>
+</div>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="VISHVPlus">
-        <p>Focused Windows apps, published on the Microsoft Store. Private by default, light by design.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Apps</h4>
-        <a href="apps/DesClock.html">DesClock</a>
-        <a href="apps/VisaryPDF.html">VisaryPDF</a>
-        <a href="index.html#apps">All apps</a>
-      </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="support.html">Support</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-      </div>
-      <div class="footer-col">
-        <h4>Microsoft Store</h4>
-        <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">DesClock</a>
-        <a href="https://apps.microsoft.com/detail/9P708BJJZGDN" target="_blank" rel="noopener">VisaryPDF</a>
-      </div>
+<section class="section cta" id="get" data-rail="Get the apps">
+  <span class="mono">Microsoft Store &middot; Windows 10 &amp; 11</span>
+  <h2 class="h-xl">Get <span class="serif">started.</span></h2>
+  <p class="lead">Both apps install from the Microsoft Store in seconds and update automatically.</p>
+  <div class="btn-row">
+    <a class="btn btn-dark" href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">Get DesClock &nearr;</a>
+    <a class="btn btn-dark" href="https://apps.microsoft.com/detail/9P708BJJZGDN" target="_blank" rel="noopener">Get VisaryPDF &nearr;</a>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo-mark.png" alt="VISHVPlus">
+      <p>Focused Windows apps on the Microsoft Store. Private by default, light by design.</p>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; <span id="year"></span> VISHVPlus</span>
-      <span>Made for Windows.</span>
+    <div class="footer-col">
+      <h4 class="mono">Apps</h4>
+      <a href="apps/DesClock.html">DesClock</a>
+      <a href="apps/VisaryPDF.html">VisaryPDF</a>
+      <a href="index.html#lineup">All apps</a>
     </div>
+    <div class="footer-col">
+      <h4 class="mono">Microsoft Store</h4>
+      <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">DesClock</a>
+      <a href="https://apps.microsoft.com/detail/9P708BJJZGDN" target="_blank" rel="noopener">VisaryPDF</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="mono">Resources</h4>
+      <a href="support.html">Support</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom mono">
+    <span>&copy; <span data-year>2026</span> VISHVPlus</span>
+    <span>Made for Windows</span>
   </div>
 </footer>
-
 <script src="assets/main.js"></script>
 </body>
 </html>

@@ -7,35 +7,33 @@
 <title>Privacy Policy — VISHVPlus</title>
 <meta name="description" content="Privacy Policy for VISHVPlus apps on the Microsoft Store, including DesClock and VisaryPDF.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="VISHVPlus">
-    </a>
-    <nav class="main-nav">
-      <a href="index.html#apps">Apps</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html"><img src="assets/logo-mark.png" alt="VISHVPlus"></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="index.html#lineup">Apps</a>
+      <a href="apps/DesClock.html">DesClock</a>
+      <a href="apps/VisaryPDF.html">VisaryPDF</a>
       <a href="support.html">Support</a>
+      <a href="privacy-policy.html" class="is-active">Privacy</a>
     </nav>
+    <a class="nav-cta" href="index.html#lineup">Get the apps</a>
   </div>
 </header>
+<main class="frame">
 
-<section class="hero-glow hero-simple">
-  <div class="wrap">
-    <p class="eyebrow">Legal</p>
-    <h1 class="display" style="font-size:clamp(2.2rem, 5vw, 3.6rem);">Privacy Policy</h1>
-  </div>
-</section>
-
-<div class="wrap" style="padding-bottom: 100px;">
-  <div class="content-card policy reveal" style="max-width: 800px; margin-left:auto; margin-right:auto;">
-  <p class="updated">Last updated: October 3, 2026</p>
-
-  <p>
+<section class="section" id="top" data-rail="Privacy">
+  <div class="label-row mono"><span>Legal / Privacy policy</span><span>Last updated: October 3, 2026</span></div>
+  <div class="pad stack">
+    <h1 class="h-hero">Privacy, <span class="serif">plainly.</span></h1>
+    <div class="prose"><p>
     This Privacy Policy explains how VISHVPlus ("VISHVPlus", "we", "us", or "our")
     handles information in connection with the Windows applications we publish on the
     Microsoft Store, including <strong>DesClock</strong>, <strong>VisaryPDF</strong> and any future VISHVPlus apps
@@ -48,27 +46,40 @@
     apply to it.
   </p>
 
-  <h3 style="margin-top:1.4em;">The short version</h3>
-  <div class="tldr-grid">
-    <div class="tldr-item">
-      <span class="tldr-icon">🙅</span>
-      <p>No VISHVPlus account, sign-in, or personal info required to use any app.</p>
-    </div>
-    <div class="tldr-item">
-      <span class="tldr-icon">💾</span>
-      <p>Settings and preferences are stored locally on your device, not our servers.</p>
-    </div>
-    <div class="tldr-item">
-      <span class="tldr-icon">🚫</span>
-      <p>We never sell personal information to anyone, under any circumstances.</p>
-    </div>
-    <div class="tldr-item">
-      <span class="tldr-icon">🏬</span>
-      <p>Microsoft handles all purchases — we never see your payment details.</p>
-    </div>
   </div>
-  <p style="font-size:0.85rem;"><em>This summary is for convenience only — the full policy below is what governs.</em></p>
+  </div>
+</section>
 
+<section class="section" id="short" data-rail="Short version">
+  <div class="label-row mono"><span>01 / The short version</span><span>For convenience only</span></div>
+  <div class="grid g-4">
+    <div class="cell reveal" style="--rd:0.00s">
+  <div class="cell-head mono"><span class="icon-box">&#9711;</span><span>01</span></div>
+  <h3>No account needed</h3>
+  <p>No VISHVPlus account, sign-in, or personal info required to use any app.</p>
+</div>
+    <div class="cell reveal" style="--rd:0.05s">
+  <div class="cell-head mono"><span class="icon-box">&#9634;</span><span>02</span></div>
+  <h3>Stored on your device</h3>
+  <p>Settings and preferences are stored locally on your device, not our servers.</p>
+</div>
+    <div class="cell reveal" style="--rd:0.10s">
+  <div class="cell-head mono"><span class="icon-box">&#10005;</span><span>03</span></div>
+  <h3>Never sold</h3>
+  <p>We never sell personal information to anyone, under any circumstances.</p>
+</div>
+    <div class="cell reveal" style="--rd:0.15s">
+  <div class="cell-head mono"><span class="icon-box">&#8862;</span><span>04</span></div>
+  <h3>Microsoft handles payment</h3>
+  <p>Microsoft handles all purchases — we never see your payment details.</p>
+</div>
+  </div>
+  <p class="note" style="padding:14px 24px;border-top:1px solid var(--hair)">This summary is for convenience only — the full policy below is what governs.</p>
+</section>
+
+<section class="section" id="policy" data-rail="Full policy">
+  <div class="label-row mono"><span>02 / Full policy</span><span>Applies to every VISHVPlus app</span></div>
+  <div class="pad"><div class="prose">
   <h2>1. Information Collected by the Microsoft Store</h2>
   <p>
     Our Apps are distributed exclusively through the Microsoft Store. When you browse,
@@ -84,7 +95,7 @@
   <p>
     Unless stated otherwise in the app-specific section below, VISHVPlus Apps:
   </p>
-  <ul class="feature-list">
+  <ul>
     <li>Do not require you to create a VISHVPlus account.</li>
     <li>Do not collect personal information such as your name, physical address, or contact list.</li>
     <li>Store your app settings and preferences locally on your device.</li>
@@ -107,7 +118,7 @@
   <p>
     We do not share personal information with third parties, except:
   </p>
-  <ul class="feature-list">
+  <ul>
     <li>With Microsoft, as necessary to distribute and license the App through the Microsoft Store;</li>
     <li>Where required by law, legal process, or to protect the rights, safety, and property of VISHVPlus or others;</li>
     <li>With service providers who process data strictly on our behalf, if disclosed in an app-specific section.</li>
@@ -150,33 +161,33 @@
     which lets you open a support ticket.
   </p>
 
-  <hr style="margin: 3em 0; border: none; border-top: 1px solid rgba(0,0,0,0.08);">
+  <hr>
 
-  <h2 id="DesClock">App-Specific Section: DesClock</h2>
+  <h2 id="DesClock" class="app-sec">App-Specific Section: DesClock</h2>
   <p>
     DesClock is a lightweight desktop clock widget for Windows, distributed on the
     Microsoft Store (Product ID: 9N9BN0W920H2). In addition to the general terms above:
   </p>
-  <ul class="feature-list">
+  <ul>
     <li>DesClock has no network access — it does not connect to the internet at all.</li>
     <li>DesClock does not require account creation or sign-in.</li>
     <li>DesClock stores your display preferences (clock face, colors, fonts, opacity, shadow, screen position, and theme choice) locally on your device only.</li>
     <li>DesClock does not collect analytics, does not use AI, does not show ads, and does not transmit any data to VISHVPlus or anyone else.</li>
   </ul>
-  <p style="font-size:0.85rem;">
+  <p class="note">
     <em>This section reflects DesClock's current data practices. If a future update to
     DesClock adds network access, analytics, cloud sync, or any other data collection, this section
     will be updated accordingly before that update is released.</em>
   </p>
 
-  <hr style="margin: 3em 0; border: none; border-top: 1px solid rgba(0,0,0,0.08);">
+  <hr>
 
-  <h2 id="VisaryPDF">App-Specific Section: VisaryPDF</h2>
+  <h2 id="VisaryPDF" class="app-sec">App-Specific Section: VisaryPDF</h2>
   <p>
     VisaryPDF is a PDF reader, editor and converter for Windows, distributed on the
     Microsoft Store (Product ID: 9P708BJJZGDN). In addition to the general terms above:
   </p>
-  <ul class="feature-list">
+  <ul>
     <li>VisaryPDF does not connect to the internet. The PDFs you open, edit, sign, convert or print are processed on your device and are never uploaded to VISHVPlus or anyone else.</li>
     <li>Optical character recognition (OCR) uses the OCR engine built into Windows and runs entirely on your device.</li>
     <li>VisaryPDF stores the following locally on your device only, in its app data folder: your settings, the file locations of up to 10 recently opened PDFs, the last page you read in up to 50 PDFs, and up to 3 signatures you choose to save.</li>
@@ -184,46 +195,52 @@
     <li>If you click a web link inside a PDF, VisaryPDF asks before opening it in your web browser. What happens on that website is governed by the website's own privacy policy.</li>
     <li>VisaryPDF does not require account creation or sign-in, does not collect analytics, does not use AI, and does not show ads.</li>
   </ul>
-  <p style="font-size:0.85rem;">
+  <p class="note">
     <em>This section reflects VisaryPDF's current data practices. If a future update adds network access,
     analytics, cloud sync, or any other data collection, this section will be updated accordingly before that
     update is released.</em>
   </p>
 
-  </div>
-</div>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="VISHVPlus">
-        <p>Focused Windows apps, published on the Microsoft Store. Private by default, light by design.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Apps</h4>
-        <a href="apps/DesClock.html">DesClock</a>
-        <a href="apps/VisaryPDF.html">VisaryPDF</a>
-        <a href="index.html#apps">All apps</a>
-      </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="support.html">Support</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-      </div>
-      <div class="footer-col">
-        <h4>Microsoft Store</h4>
-        <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">DesClock</a>
-        <a href="https://apps.microsoft.com/detail/9P708BJJZGDN" target="_blank" rel="noopener">VisaryPDF</a>
-      </div>
+  </div></div>
+</section>
+
+<section class="section cta" data-rail="Questions">
+  <span class="mono">Questions about your data</span>
+  <h2 class="h-xl">Ask us <span class="serif">anything.</span></h2>
+  <p class="lead">If something in this policy is unclear, open a support ticket and choose "Privacy question".</p>
+  <div class="btn-row"><a class="btn btn-dark" href="support.html">Contact support</a></div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo-mark.png" alt="VISHVPlus">
+      <p>Focused Windows apps on the Microsoft Store. Private by default, light by design.</p>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; <span id="year"></span> VISHVPlus</span>
-      <span>Made for Windows.</span>
+    <div class="footer-col">
+      <h4 class="mono">Apps</h4>
+      <a href="apps/DesClock.html">DesClock</a>
+      <a href="apps/VisaryPDF.html">VisaryPDF</a>
+      <a href="index.html#lineup">All apps</a>
     </div>
+    <div class="footer-col">
+      <h4 class="mono">Microsoft Store</h4>
+      <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">DesClock</a>
+      <a href="https://apps.microsoft.com/detail/9P708BJJZGDN" target="_blank" rel="noopener">VisaryPDF</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="mono">Resources</h4>
+      <a href="support.html">Support</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom mono">
+    <span>&copy; <span data-year>2026</span> VISHVPlus</span>
+    <span>Made for Windows</span>
   </div>
 </footer>
-
 <script src="assets/main.js"></script>
 </body>
 </html>

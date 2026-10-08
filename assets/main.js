@@ -1,87 +1,15 @@
-document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 
-/* ---------- Scroll reveal ---------- */
+/* ---------- Live clocks ---------- */
 (function () {
-  const targets = document.querySelectorAll('.reveal');
-  if (!targets.length) return;
-
-  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-    targets.forEach((el) => el.classList.add('in-view'));
-    return;
-  }
-
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          io.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
-  );
-
-  targets.forEach((el) => io.observe(el));
-})();
-
-/* ---------- Animated stat counters ---------- */
-(function () {
-  const stats = document.querySelectorAll('.stat-num[data-target]');
-  if (!stats.length) return;
-
-  function animate(el) {
-    const target = parseFloat(el.dataset.target);
-    const decimals = el.dataset.decimals ? parseInt(el.dataset.decimals, 10) : 0;
-    const suffix = el.dataset.suffix || '';
-    const duration = 900;
-
-    if (prefersReducedMotion) {
-      el.textContent = target.toFixed(decimals) + suffix;
-      return;
-    }
-
-    const start = performance.now();
-    function tick(now) {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = (target * eased).toFixed(decimals) + suffix;
-      if (p < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-
-  if (!('IntersectionObserver' in window)) {
-    stats.forEach(animate);
-    return;
-  }
-
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animate(entry.target);
-          io.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.6 }
-  );
-
-  stats.forEach((el) => io.observe(el));
-})();
-
-/* ---------- Live clock demo (digital + analog) ---------- */
-(function () {
-  const digitalTime = document.getElementById('demoTime');
-  const digitalDate = document.getElementById('demoDate');
-  const hourHand = document.getElementById('handHour');
-  const minuteHand = document.getElementById('handMinute');
-  const secondHand = document.getElementById('handSecond');
-
-  if (!digitalTime && !hourHand) return;
+  const times = document.querySelectorAll('[data-clock="time"]');
+  const dates = document.querySelectorAll('[data-clock="date"]');
+  const hours = document.querySelectorAll('[data-clock="hour"]');
+  const minutes = document.querySelectorAll('[data-clock="minute"]');
+  const seconds = document.querySelectorAll('[data-clock="second"]');
+  if (!times.length && !hours.length) return;
 
   function render() {
     const now = new Date();
@@ -89,46 +17,94 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
     const m = now.getMinutes();
     const s = now.getSeconds();
 
-    if (digitalTime) {
-      digitalTime.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-    }
-    if (digitalDate) {
-      digitalDate.textContent = now.toLocaleDateString([], { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-    }
-
-    if (hourHand) hourHand.style.transform = `rotate(${(h % 12) * 30 + m * 0.5}deg)`;
-    if (minuteHand) minuteHand.style.transform = `rotate(${m * 6 + s * 0.1}deg)`;
-    if (secondHand) secondHand.style.transform = `rotate(${s * 6}deg)`;
+    times.forEach((el) => {
+      const opts = { hour: '2-digit', minute: '2-digit' };
+      if (el.dataset.seconds !== undefined) opts.second = '2-digit';
+      el.textContent = now.toLocaleTimeString([], opts);
+    });
+    dates.forEach((el) => {
+      const style = el.dataset.style === 'short'
+        ? { weekday: 'short', day: 'numeric', month: 'short' }
+        : { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+      el.textContent = now.toLocaleDateString([], style);
+    });
+    hours.forEach((el) => { el.style.transform = `rotate(${(h % 12) * 30 + m * 0.5}deg)`; });
+    minutes.forEach((el) => { el.style.transform = `rotate(${m * 6 + s * 0.1}deg)`; });
+    seconds.forEach((el) => { el.style.transform = `rotate(${s * 6}deg)`; });
   }
 
   render();
   setInterval(render, 1000);
 })();
 
-/* ---------- Subtle hero parallax on scroll ---------- */
+/* ---------- Scroll reveal ---------- */
 (function () {
-  if (prefersReducedMotion) return;
-  const heroes = document.querySelectorAll('.hero-glow');
-  if (!heroes.length) return;
-
-  let ticking = false;
-  function update() {
-    const y = window.scrollY;
-    const shift = Math.min(y * 0.25, 70);
-    heroes.forEach((hero) => {
-      hero.style.setProperty('--parallax-y', `${shift}px`);
+  const els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    els.forEach((el) => el.classList.add('in-view'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
     });
-    ticking = false;
+  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+  els.forEach((el) => io.observe(el));
+})();
+
+/* ---------- Count-up numbers ---------- */
+(function () {
+  const nums = document.querySelectorAll('[data-count]');
+  if (!nums.length) return;
+
+  function run(el) {
+    const target = parseFloat(el.dataset.count);
+    const dec = parseInt(el.dataset.decimals || '0', 10);
+    const suffix = el.dataset.suffix || '';
+    if (reduceMotion) { el.textContent = target.toFixed(dec) + suffix; return; }
+    const start = performance.now();
+    (function tick(now) {
+      const p = Math.min((now - start) / 900, 1);
+      el.textContent = (target * (1 - Math.pow(1 - p, 3))).toFixed(dec) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    })(start);
   }
 
-  window.addEventListener(
-    'scroll',
-    () => {
-      if (!ticking) {
-        requestAnimationFrame(update);
-        ticking = true;
+  if (!('IntersectionObserver' in window)) { nums.forEach(run); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
+  }, { threshold: 0.6 });
+  nums.forEach((el) => io.observe(el));
+})();
+
+/* ---------- Right-edge section rail ---------- */
+(function () {
+  const sections = document.querySelectorAll('[data-rail]');
+  if (sections.length < 2 || !('IntersectionObserver' in window)) return;
+
+  const rail = document.createElement('nav');
+  rail.className = 'rail';
+  rail.setAttribute('aria-label', 'On this page');
+  const links = new Map();
+
+  sections.forEach((sec, i) => {
+    if (!sec.id) sec.id = 'section-' + (i + 1);
+    const a = document.createElement('a');
+    a.href = '#' + sec.id;
+    a.textContent = sec.dataset.rail;
+    rail.appendChild(a);
+    links.set(sec, a);
+  });
+  document.body.appendChild(rail);
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        links.forEach((a) => a.classList.remove('on'));
+        links.get(e.target).classList.add('on');
       }
-    },
-    { passive: true }
-  );
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach((s) => io.observe(s));
 })();

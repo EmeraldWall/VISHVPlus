@@ -7,40 +7,42 @@
 <title>Support — VISHVPlus</title>
 <meta name="description" content="Get support for VISHVPlus apps. Submit a support ticket in a minute.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="VISHVPlus">
-    </a>
-    <nav class="main-nav">
-      <a href="index.html#apps">Apps</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="support.html">Support</a>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html"><img src="assets/logo-mark.png" alt="VISHVPlus"></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="index.html#lineup">Apps</a>
+      <a href="apps/DesClock.html">DesClock</a>
+      <a href="apps/VisaryPDF.html">VisaryPDF</a>
+      <a href="support.html" class="is-active">Support</a>
+      <a href="privacy-policy.html">Privacy</a>
     </nav>
+    <a class="nav-cta" href="index.html#lineup">Get the apps</a>
   </div>
 </header>
+<main class="frame">
 
-<section class="hero-glow hero-simple">
-  <div class="wrap">
-    <p class="eyebrow">We're here to help</p>
-    <h1 class="display" style="font-size:clamp(2.2rem, 5vw, 3.6rem);">Support</h1>
+<section class="section" id="top" data-rail="Support">
+  <div class="label-row mono"><span>Help / Support</span><span>DesClock &middot; VisaryPDF</span></div>
+  <div class="pad stack">
+    <h1 class="h-hero">How can we <span class="serif">help?</span></h1>
+    <p class="lead">Fill in the details below. When you submit, we'll open a pre-filled support ticket for you to send — no email required.</p>
   </div>
 </section>
 
-<div class="wrap" style="padding-bottom: 40px;">
-  <div class="content-card reveal" style="max-width: 720px; margin-left:auto; margin-right:auto;">
-    <p class="lede text-center" style="margin: 0 0 32px;">
-      Fill in the details below. When you submit, we'll open a pre-filled support ticket
-      for you to send — no email required.
-    </p>
-
+<section class="section" id="ticket" data-rail="Open a ticket">
+  <div class="label-row mono"><span>01 / Open a ticket</span><span>Bugs &middot; Features &middot; Billing &middot; Privacy</span></div>
+  <div class="pad">
     <form class="support-form" id="support-form">
       <div>
-        <label for="app">Which app is this about?</label>
+        <label class="mono" for="app">Which app is this about?</label>
         <select id="app" name="app">
           <option value="DesClock">DesClock</option>
           <option value="VisaryPDF">VisaryPDF</option>
@@ -50,7 +52,7 @@
       </div>
 
       <div>
-        <label for="category">Category</label>
+        <label class="mono" for="category">Category</label>
         <select id="category" name="category">
           <option value="Bug report">Bug report</option>
           <option value="Feature request">Feature request</option>
@@ -61,84 +63,81 @@
       </div>
 
       <div>
-        <label for="subject">Subject</label>
+        <label class="mono" for="subject">Subject</label>
         <input type="text" id="subject" name="subject" placeholder="Short summary of your issue" required>
       </div>
 
       <div>
-        <label for="name">Your name (optional, shown in the ticket)</label>
+        <label class="mono" for="name">Your name (optional, shown in the ticket)</label>
         <input type="text" id="name" name="name" placeholder="Jane Doe">
       </div>
 
       <div>
-        <label for="description">Details</label>
+        <label class="mono" for="description">Details</label>
         <textarea id="description" name="description" placeholder="Describe your issue, steps to reproduce, or your question in detail." required></textarea>
       </div>
 
-      <button type="submit" class="btn btn-primary">Open Support Ticket</button>
+      <button type="submit" class="btn btn-dark">Open Support Ticket</button>
     </form>
-  </div>
-</div>
-
-<section class="section-soft">
-  <div class="wrap" style="max-width:760px;">
-    <div class="section-head reveal">
-      <h2 class="headline">Frequently Asked Questions</h2>
-    </div>
-
-    <div class="faq-item reveal">
-      <h3>Where can I download your apps?</h3>
-      <p>All VISHVPlus apps are distributed exclusively through the Microsoft Store. See the <a href="index.html#apps" style="color:var(--red); font-weight:600;">Apps</a> page for links.</p>
-    </div>
-
-    <div class="faq-item reveal" style="--reveal-delay:0.05s;">
-      <h3>I was charged for an app — where do refunds come from?</h3>
-      <p>Purchases and refunds for Microsoft Store apps are handled by Microsoft, not VISHVPlus directly. Request a refund via your <a href="https://account.microsoft.com/billing/orders" target="_blank" rel="noopener" style="color:var(--red); font-weight:600;">Microsoft order history</a>. We're happy to help with anything else via a support ticket above.</p>
-    </div>
-
-    <div class="faq-item reveal" style="--reveal-delay:0.1s;">
-      <h3>Do I need an account to get support?</h3>
-      <p>Tickets are filed through our issue tracker, which asks you to sign in with a free account before sending. That lets you follow your ticket and get notified when we reply.</p>
-    </div>
-
-    <div class="faq-item reveal" style="--reveal-delay:0.15s;">
-      <h3>Where is your Privacy Policy?</h3>
-      <p>See our <a href="privacy-policy.html" style="color:var(--red); font-weight:600;">Privacy Policy</a> page, which covers DesClock, VisaryPDF and all VISHVPlus apps.</p>
-    </div>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="VISHVPlus">
-        <p>Focused Windows apps, published on the Microsoft Store. Private by default, light by design.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Apps</h4>
-        <a href="apps/DesClock.html">DesClock</a>
-        <a href="apps/VisaryPDF.html">VisaryPDF</a>
-        <a href="index.html#apps">All apps</a>
-      </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="support.html">Support</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-      </div>
-      <div class="footer-col">
-        <h4>Microsoft Store</h4>
-        <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">DesClock</a>
-        <a href="https://apps.microsoft.com/detail/9P708BJJZGDN" target="_blank" rel="noopener">VisaryPDF</a>
-      </div>
+<section class="section" id="faq" data-rail="FAQ">
+  <div class="label-row mono"><span>02 / FAQ</span><span>Quick answers</span></div>
+  <div class="pad stack reveal"><h2 class="h-xl">Frequently <span class="serif">asked.</span></h2></div>
+  <div class="grid g-2" style="border-top:1px solid var(--hair)">
+    <div class="cell reveal" style="--rd:0.00s">
+  <div class="cell-head mono"><span></span><span>01</span></div>
+  <h3>Where can I download your apps?</h3>
+  <p>All VISHVPlus apps are distributed exclusively through the Microsoft Store. See the <a href="index.html#apps" style="text-decoration:underline;text-underline-offset:3px">Apps</a> page for links.</p>
+</div>
+    <div class="cell reveal" style="--rd:0.05s">
+  <div class="cell-head mono"><span></span><span>02</span></div>
+  <h3>I was charged for an app — where do refunds come from?</h3>
+  <p>Purchases and refunds for Microsoft Store apps are handled by Microsoft, not VISHVPlus directly. Request a refund via your <a href="https://account.microsoft.com/billing/orders" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">Microsoft order history</a>. We're happy to help with anything else via a support ticket above.</p>
+</div>
+    <div class="cell reveal" style="--rd:0.00s">
+  <div class="cell-head mono"><span></span><span>03</span></div>
+  <h3>Do I need an account to get support?</h3>
+  <p>Tickets are filed through our issue tracker, which asks you to sign in with a free account before sending. That lets you follow your ticket and get notified when we reply.</p>
+</div>
+    <div class="cell reveal" style="--rd:0.05s">
+  <div class="cell-head mono"><span></span><span>04</span></div>
+  <h3>Where is your Privacy Policy?</h3>
+  <p>See our <a href="privacy-policy.html" style="text-decoration:underline;text-underline-offset:3px">Privacy Policy</a> page, which covers DesClock, VisaryPDF and all VISHVPlus apps.</p>
+</div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo-mark.png" alt="VISHVPlus">
+      <p>Focused Windows apps on the Microsoft Store. Private by default, light by design.</p>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; <span id="year"></span> VISHVPlus</span>
-      <span>Made for Windows.</span>
+    <div class="footer-col">
+      <h4 class="mono">Apps</h4>
+      <a href="apps/DesClock.html">DesClock</a>
+      <a href="apps/VisaryPDF.html">VisaryPDF</a>
+      <a href="index.html#lineup">All apps</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="mono">Microsoft Store</h4>
+      <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">DesClock</a>
+      <a href="https://apps.microsoft.com/detail/9P708BJJZGDN" target="_blank" rel="noopener">VisaryPDF</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="mono">Resources</h4>
+      <a href="support.html">Support</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
     </div>
   </div>
+  <div class="footer-bottom mono">
+    <span>&copy; <span data-year>2026</span> VISHVPlus</span>
+    <span>Made for Windows</span>
+  </div>
 </footer>
-
 <script src="assets/main.js"></script>
 <script>
 const REPO = 'EmeraldWall/VISHVPlus';
