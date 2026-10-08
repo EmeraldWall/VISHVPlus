@@ -13,7 +13,7 @@
 
   --brand: #a70707;
   --clock: #2d63e8;
-  --pdf: #e0632c;
+  --pdf: #2a14b8;
   --ok: #1f7a46;
 
   --sans: "Inter Tight", "Segoe UI", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
@@ -217,7 +217,7 @@ h1, h2, h3, h4, p { margin: 0; }
 
 .chip-ok { color: var(--ok); border-color: rgba(31, 122, 70, 0.4); }
 .chip-clock { color: var(--clock); border-color: rgba(45, 99, 232, 0.4); }
-.chip-pdf { color: var(--pdf); border-color: rgba(224, 99, 44, 0.45); }
+.chip-pdf { color: var(--pdf); border-color: rgba(42, 20, 184, 0.4); }
 
 .num-tag {
   display: inline-block;
@@ -253,6 +253,7 @@ h1, h2, h3, h4, p { margin: 0; }
 .grid > * { background: var(--paper); }
 
 .g-2 { grid-template-columns: repeat(2, 1fr); }
+.g-2 > :last-child:nth-child(odd) { grid-column: 1 / -1; }
 .g-3 { grid-template-columns: repeat(3, 1fr); }
 .g-4 { grid-template-columns: repeat(4, 1fr); }
 
@@ -679,7 +680,7 @@ h1, h2, h3, h4, p { margin: 0; }
 .scan-page i:nth-of-type(7) { animation-delay: 1.2s; }
 .scan-page i:nth-of-type(8) { width: 80%; animation-delay: 1.4s; }
 
-.scan-bar { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: var(--pdf); box-shadow: 0 0 16px 4px rgba(224, 99, 44, 0.6); animation: scanMove 4.5s ease-in-out infinite; }
+.scan-bar { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: #4f8bff; box-shadow: 0 0 16px 4px rgba(79, 139, 255, 0.6); animation: scanMove 4.5s ease-in-out infinite; }
 
 @keyframes scanMove { 0% { top: 0; opacity: 0; } 8% { opacity: 1; } 55% { top: 100%; opacity: 1; } 62%, 100% { top: 100%; opacity: 0; } }
 @keyframes sharpen { 0%, 12% { filter: blur(1.4px); background: #8a8478; } 45%, 88% { filter: none; background: #2b2925; } 100% { filter: blur(1.4px); background: #8a8478; } }
@@ -726,6 +727,25 @@ h1, h2, h3, h4, p { margin: 0; }
 .out .row span { font-size: clamp(9px, 1.1vw, 12px); color: var(--muted); }
 @keyframes outIn { 0% { opacity: 0; transform: translateX(-10px); } 12%, 85% { opacity: 1; transform: none; } 100% { opacity: 0; } }
 .flow-arrow { font-family: var(--mono); color: var(--muted); font-size: clamp(14px, 2vw, 22px); }
+
+/* Redact */
+.redact-scene { background: #e4e1da; display: flex; align-items: center; justify-content: center; }
+.redact-page { width: 36%; aspect-ratio: 0.77; background: #fff; box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18); padding: 9% 7%; display: flex; flex-direction: column; gap: 7%; }
+.rline { position: relative; display: block; height: 3.2%; }
+.rline i { display: block; height: 100%; background: #c9c5bc; }
+.rbar { position: absolute; top: -60%; height: 220%; background: #111; transform-origin: left center; transform: scaleX(0); animation: redact 5s ease-in-out infinite; }
+@keyframes redact { 0%, 12% { transform: scaleX(0); } 35%, 88% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+
+/* Batch */
+.batch-scene { background: #e8e5de; display: flex; align-items: center; justify-content: center; }
+.batch-panel { width: 72%; background: #fbfaf7; border: 1px solid var(--hair-2); box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12); }
+.bhead { display: flex; justify-content: space-between; padding: 10px 14px; border-bottom: 1px solid var(--hair); color: var(--muted); font-size: clamp(8px, 0.9vw, 10px); }
+.brow { display: grid; grid-template-columns: 1.3fr 1fr 1fr; align-items: center; gap: 10px; padding: 9px 14px; border-bottom: 1px solid var(--hair); font-size: clamp(9px, 1.05vw, 12px); }
+.brow:last-child { border-bottom: none; }
+.bstep { color: var(--faint); font-size: clamp(7px, 0.8vw, 9px); }
+.bbar { height: 6px; background: var(--paper-3); overflow: hidden; }
+.bbar i { display: block; height: 100%; width: 100%; background: var(--pdf); transform-origin: left; transform: scaleX(0); animation: bfill 6s ease-in-out infinite; }
+@keyframes bfill { 0%, 5% { transform: scaleX(0); } 45%, 90% { transform: scaleX(1); } 100% { transform: scaleX(1); opacity: 0; } }
 
 /* Themes */
 .themes-scene { background: #e4e0d8; display: grid; grid-template-columns: repeat(2, 1fr); gap: 5%; padding: 7% 9%; }
@@ -867,4 +887,6 @@ html.js .reveal.in-view { opacity: 1; transform: none; }
   .scan-page i { filter: none; background: #2b2925; }
   .sig-path { stroke-dashoffset: 0; }
   .out .row { opacity: 1; }
+  .rbar { transform: scaleX(1); }
+  .bbar i { transform: scaleX(1); }
 }
