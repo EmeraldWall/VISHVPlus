@@ -30,7 +30,7 @@
 <main class="frame">
 
 <section class="section" id="top" data-rail="Privacy">
-  <div class="label-row mono"><span>Legal / Privacy policy</span><span>Last updated: October 3, 2026</span></div>
+  <div class="label-row mono"><span>Legal / Privacy policy</span><span>Last updated: October 8, 2026</span></div>
   <div class="pad stack">
     <h1 class="h-hero">Privacy, <span class="serif">plainly.</span></h1>
     <div class="prose"><p>
@@ -171,7 +171,7 @@
   <ul>
     <li>DesClock has no network access — it does not connect to the internet at all.</li>
     <li>DesClock does not require account creation or sign-in.</li>
-    <li>DesClock stores your display preferences (clock face, colors, fonts, opacity, shadow, screen position, and theme choice) locally on your device only.</li>
+    <li>DesClock stores your display preferences (clock face, size, colors, fonts, opacity, shadow, saved looks, monitor and screen position, and theme choice) locally on your device only. If you turn on "start with Windows", it registers itself as a Windows startup task, which you can turn off at any time.</li>
     <li>DesClock does not collect analytics, does not use AI, does not show ads, and does not transmit any data to VISHVPlus or anyone else.</li>
   </ul>
   <p class="note">
@@ -188,9 +188,11 @@
     Microsoft Store (Product ID: 9P708BJJZGDN). In addition to the general terms above:
   </p>
   <ul>
-    <li>VisaryPDF does not connect to the internet. The PDFs you open, edit, sign, convert or print are processed on your device and are never uploaded to VISHVPlus or anyone else.</li>
-    <li>Optical character recognition (OCR) uses the OCR engine built into Windows and runs entirely on your device.</li>
-    <li>VisaryPDF stores the following locally on your device only, in its app data folder: your settings, the file locations of up to 10 recently opened PDFs, the last page you read in up to 50 PDFs, and up to 3 signatures you choose to save.</li>
+    <li>VisaryPDF works offline. The PDFs you open, edit, sign, convert, print or batch-process are processed on your device and are never uploaded to VISHVPlus or anyone else.</li>
+    <li>VisaryPDF connects to the internet only if you choose to add a signature timestamp or long-term validation information when signing a PDF with a certificate. For a timestamp, only a hash of your signature is sent to the timestamp server you choose (for example DigiCert or Sectigo); your document is not sent. For validation information, VisaryPDF asks the certificate authorities named in the certificates whether those certificates are still valid. These services are run by third parties under their own privacy policies. Checking signatures stays offline.</li>
+    <li>Optical character recognition (OCR) and read aloud use the OCR engine and voices built into Windows and run entirely on your device.</li>
+    <li>VisaryPDF stores the following locally on your device only, in its app data folder: your settings and tool preferences, the file locations of up to 10 recently opened PDFs and of the documents to reopen at start (if that setting is on), the last page you read in up to 50 PDFs, bookmarks you add, the timestamp server you choose, and up to 3 signatures you choose to save. You can clear the recent files list and your bookmarks in Settings.</li>
+    <li>If you create a personal certificate for signing in VisaryPDF, it is stored in your Windows certificate store on your device.</li>
     <li>Comments you add to a PDF are labeled with an author name, which is saved inside that PDF and visible to anyone you share it with. By default this is your Windows user name; you can change it in Menu &gt; Settings.</li>
     <li>If you click a web link inside a PDF, VisaryPDF asks before opening it in your web browser. What happens on that website is governed by the website's own privacy policy.</li>
     <li>VisaryPDF does not require account creation or sign-in, does not collect analytics, does not use AI, and does not show ads.</li>
