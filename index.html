@@ -7,15 +7,15 @@
 <title>VISHVPlus — Focused apps for Windows</title>
 <meta name="description" content="VISHVPlus makes focused, private Windows apps: DesClock, a lightweight desktop clock, and VisaryPDF, a PDF reader, editor and converter with on-device OCR.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="preload" href="assets/fonts/inter-tight-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jetbrains-mono-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.min.css?v=ed2398d7">
 </head>
 <body>
 <header class="nav">
   <div class="nav-inner">
-    <a class="nav-brand" href="index.html"><img src="assets/logo-mark.png" alt="VISHVPlus"></a>
+    <a class="nav-brand" href="index.html"><img width="447" height="160" decoding="async" src="assets/logo-mark.webp" alt="VISHVPlus"></a>
     <nav class="nav-links" aria-label="Main">
       <a href="index.html" class="is-active">Home</a>
       <a href="index.html#lineup">Apps</a>
@@ -32,8 +32,8 @@
 <section class="hero" data-rail="Home" id="top">
   <div class="orbit" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
 
-  <div class="float fcard f-icon f-dc" style="left:9%;top:16%;--r:-6deg;--d:-1s"><img src="assets/desclock-icon.png" alt=""></div>
-  <div class="float fcard f-icon hide-sm" style="right:10%;top:62%;--r:5deg;--d:-4s;--dx:-8px"><img src="assets/visarypdf-icon.png" alt=""></div>
+  <div class="float fcard f-icon f-dc" style="left:9%;top:16%;--r:-6deg;--d:-1s"><img width="256" height="256" decoding="async" src="assets/desclock-icon.webp" alt=""></div>
+  <div class="float fcard f-icon hide-sm" style="right:10%;top:62%;--r:5deg;--d:-4s;--dx:-8px"><img width="256" height="256" decoding="async" src="assets/visarypdf-icon.webp" alt=""></div>
   <div class="float fcard f-clock hide-sm" style="right:12%;top:13%;--r:3deg;--d:-2s"><div class="t" data-clock="time">12:00</div><div class="d" data-clock="date" data-style="short">Today</div></div>
   <div class="float fcard f-analog hide-sm" style="left:15%;top:62%;--d:-6s;--dx:10px"><svg class="clock-svg" viewBox="0 0 200 200" aria-hidden="true"><circle class="dial" cx="100" cy="100" r="96"></circle><line class="tick major" x1="100.0" y1="10.0" x2="100.0" y2="22.0"></line><line class="tick" x1="145.0" y1="22.1" x2="141.5" y2="28.1"></line><line class="tick" x1="177.9" y1="55.0" x2="171.9" y2="58.5"></line><line class="tick major" x1="190.0" y1="100.0" x2="178.0" y2="100.0"></line><line class="tick" x1="177.9" y1="145.0" x2="171.9" y2="141.5"></line><line class="tick" x1="145.0" y1="177.9" x2="141.5" y2="171.9"></line><line class="tick major" x1="100.0" y1="190.0" x2="100.0" y2="178.0"></line><line class="tick" x1="55.0" y1="177.9" x2="58.5" y2="171.9"></line><line class="tick" x1="22.1" y1="145.0" x2="28.1" y2="141.5"></line><line class="tick major" x1="10.0" y1="100.0" x2="22.0" y2="100.0"></line><line class="tick" x1="22.1" y1="55.0" x2="28.1" y2="58.5"></line><line class="tick" x1="55.0" y1="22.1" x2="58.5" y2="28.1"></line><line class="hand hand-hour" data-clock="hour" x1="100" y1="100" x2="100" y2="58"></line><line class="hand hand-minute" data-clock="minute" x1="100" y1="100" x2="100" y2="34"></line><line class="hand hand-second" data-clock="second" x1="100" y1="112" x2="100" y2="26"></line><circle class="pivot" cx="100" cy="100" r="4.5"></circle></svg></div>
   <div class="float fcard f-page hide-md" style="left:27%;top:5%;--r:-4deg;--d:-3s;--dy:8px"><i></i><i></i><i class="hl"></i><i></i><i style="width:70%"></i><i></i></div>
@@ -43,7 +43,7 @@
   <div class="float fcard f-chip mono hide-sm" style="left:30%;top:86%;--d:-8s">No telemetry</div>
 
   <div class="hero-center">
-    <img class="hero-logo" src="assets/logo-mark.png" alt="VISHVPlus">
+    <img width="447" height="160" decoding="async" class="hero-logo" src="assets/logo-mark.webp" alt="VISHVPlus">
     <h1 class="hero-tagline">Focused apps <span class="serif">for Windows.</span></h1>
     <p class="hero-sub">VISHVPlus makes small, careful Windows apps that do one job well, keep your data on your PC, and stay out of your way.</p>
     <div class="btn-row" style="justify-content:center">
@@ -68,7 +68,7 @@
   <div class="card-top mono"><span class="num-tag clock">01</span><span>Desktop clock widget</span></div>
   <div class="card-visual" style="aspect-ratio:16 / 10"><div class="mock wallpaper"><div class="widget-analog" style="left:6%;top:9%;"><svg class="clock-svg" viewBox="0 0 200 200" aria-hidden="true"><circle class="dial" cx="100" cy="100" r="96"></circle><line class="tick major" x1="100.0" y1="10.0" x2="100.0" y2="22.0"></line><line class="tick" x1="145.0" y1="22.1" x2="141.5" y2="28.1"></line><line class="tick" x1="177.9" y1="55.0" x2="171.9" y2="58.5"></line><line class="tick major" x1="190.0" y1="100.0" x2="178.0" y2="100.0"></line><line class="tick" x1="177.9" y1="145.0" x2="171.9" y2="141.5"></line><line class="tick" x1="145.0" y1="177.9" x2="141.5" y2="171.9"></line><line class="tick major" x1="100.0" y1="190.0" x2="100.0" y2="178.0"></line><line class="tick" x1="55.0" y1="177.9" x2="58.5" y2="171.9"></line><line class="tick" x1="22.1" y1="145.0" x2="28.1" y2="141.5"></line><line class="tick major" x1="10.0" y1="100.0" x2="22.0" y2="100.0"></line><line class="tick" x1="22.1" y1="55.0" x2="28.1" y2="58.5"></line><line class="tick" x1="55.0" y1="22.1" x2="58.5" y2="28.1"></line><text class="num" x="100" y="36">12</text><text class="num" x="164" y="100">3</text><text class="num" x="100" y="164">6</text><text class="num" x="36" y="100">9</text><line class="hand hand-hour" data-clock="hour" x1="100" y1="100" x2="100" y2="58"></line><line class="hand hand-minute" data-clock="minute" x1="100" y1="100" x2="100" y2="34"></line><line class="hand hand-second" data-clock="second" x1="100" y1="112" x2="100" y2="26"></line><circle class="pivot" cx="100" cy="100" r="4.5"></circle></svg></div><div class="widget-digital sm" style="right:6%;top:9%;text-align:right;"><div class="t" data-clock="time">12:00</div><div class="d" data-clock="date">Today</div></div><div class="taskbar"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
   <div class="card-body">
-    <div class="card-icon"><img src="assets/desclock-icon.png" alt=""></div>
+    <div class="card-icon"><img loading="lazy" width="256" height="256" decoding="async" src="assets/desclock-icon.webp" alt=""></div>
     <h3 class="app-name">Des<span class="t-clock">Clock</span></h3>
     <p>A digital or analog clock for your desktop in four styles, any size, styled exactly how you like. It never touches the network.</p>
     <div class="chips"><span class="chip chip-ok">Available now</span><span class="chip">Microsoft Store</span><span class="chip">Windows 10 &middot; 11</span><span class="chip">Multi-monitor</span></div>
@@ -79,7 +79,7 @@
   <div class="card-top mono"><span class="num-tag pdf">02</span><span>PDF reader &amp; editor</span></div>
   <div class="card-visual" style="aspect-ratio:16 / 10"><div class="mock" style="background:#d9d5cc"><div class="win"><div class="win-bar"><span class="menu"></span><span class="win-tab on">Lease agreement.pdf</span><span class="win-tab">Invoice-0921.pdf</span><span class="win-tab">Scan 14.pdf</span><span class="win-dots"><i></i><i></i><i></i></span></div><div class="win-body"><div class="thumbs"><i></i><i class="on"></i><i></i><i></i></div><div class="stage"><div class="page"><span class="title"></span><i></i><i></i><i class="short"></i><i></i><i class="hl"></i><i></i><i class="short"></i><i></i><i></i><i class="short"></i></div><div class="toolrail"><i></i><i></i><i></i><i></i><i></i></div><span class="pager">2 / 12 &middot; 100%</span></div></div></div></div></div>
   <div class="card-body">
-    <div class="card-icon"><img src="assets/visarypdf-icon.png" alt=""></div>
+    <div class="card-icon"><img loading="lazy" width="256" height="256" decoding="async" src="assets/visarypdf-icon.webp" alt=""></div>
     <h3 class="app-name">Visary<span class="t-pdf">PDF</span></h3>
     <p>Read, edit, sign, redact and convert PDFs, batch-process whole folders, and make scans searchable with on-device OCR.</p>
     <div class="chips"><span class="chip chip-ok">Available now</span><span class="chip">Microsoft Store</span><span class="chip">Windows 10 &middot; 11</span><span class="chip">x64 &middot; x86 &middot; ARM64</span></div>
@@ -190,22 +190,22 @@
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="assets/logo-mark.png" alt="VISHVPlus">
+      <img loading="lazy" width="447" height="160" decoding="async" src="assets/logo-mark.webp" alt="VISHVPlus">
       <p>Focused Windows apps on the Microsoft Store. Private by default, light by design.</p>
     </div>
     <div class="footer-col">
-      <h4 class="mono">Apps</h4>
+      <h2 class="mono">Apps</h2>
       <a href="apps/DesClock.html">DesClock</a>
       <a href="apps/VisaryPDF.html">VisaryPDF</a>
       <a href="index.html#lineup">All apps</a>
     </div>
     <div class="footer-col">
-      <h4 class="mono">Microsoft Store</h4>
+      <h2 class="mono">Microsoft Store</h2>
       <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">DesClock</a>
       <a href="https://apps.microsoft.com/detail/9P708BJJZGDN" target="_blank" rel="noopener">VisaryPDF</a>
     </div>
     <div class="footer-col">
-      <h4 class="mono">Resources</h4>
+      <h2 class="mono">Resources</h2>
       <a href="support.html">Support</a>
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
@@ -216,6 +216,6 @@
     <span>Made for Windows</span>
   </div>
 </footer>
-<script src="assets/main.js"></script>
+<script src="assets/main.min.js?v=ed2398d7" defer></script>
 </body>
 </html>

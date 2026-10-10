@@ -7,15 +7,15 @@
 <title>Support — VISHVPlus</title>
 <meta name="description" content="Get support for VISHVPlus apps. Submit a support ticket in a minute.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="preload" href="assets/fonts/inter-tight-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jetbrains-mono-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.min.css?v=ed2398d7">
 </head>
 <body>
 <header class="nav">
   <div class="nav-inner">
-    <a class="nav-brand" href="index.html"><img src="assets/logo-mark.png" alt="VISHVPlus"></a>
+    <a class="nav-brand" href="index.html"><img width="447" height="160" decoding="async" src="assets/logo-mark.webp" alt="VISHVPlus"></a>
     <nav class="nav-links" aria-label="Main">
       <a href="index.html">Home</a>
       <a href="index.html#lineup">Apps</a>
@@ -118,22 +118,22 @@
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="assets/logo-mark.png" alt="VISHVPlus">
+      <img loading="lazy" width="447" height="160" decoding="async" src="assets/logo-mark.webp" alt="VISHVPlus">
       <p>Focused Windows apps on the Microsoft Store. Private by default, light by design.</p>
     </div>
     <div class="footer-col">
-      <h4 class="mono">Apps</h4>
+      <h2 class="mono">Apps</h2>
       <a href="apps/DesClock.html">DesClock</a>
       <a href="apps/VisaryPDF.html">VisaryPDF</a>
       <a href="index.html#lineup">All apps</a>
     </div>
     <div class="footer-col">
-      <h4 class="mono">Microsoft Store</h4>
+      <h2 class="mono">Microsoft Store</h2>
       <a href="https://apps.microsoft.com/detail/9N9BN0W920H2?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">DesClock</a>
       <a href="https://apps.microsoft.com/detail/9P708BJJZGDN" target="_blank" rel="noopener">VisaryPDF</a>
     </div>
     <div class="footer-col">
-      <h4 class="mono">Resources</h4>
+      <h2 class="mono">Resources</h2>
       <a href="support.html">Support</a>
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
@@ -144,7 +144,7 @@
     <span>Made for Windows</span>
   </div>
 </footer>
-<script src="assets/main.js"></script>
+<script src="assets/main.min.js?v=ed2398d7" defer></script>
 <script>
 const REPO = 'EmeraldWall/VISHVPlus';
 
