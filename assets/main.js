@@ -34,7 +34,18 @@ document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new 
   }
 
   render();
-  setInterval(render, 1000);
+  setInterval(() => { if (!document.hidden) render(); }, 1000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
+})();
+
+/* ---------- Pause off-screen animations (saves CPU and battery) ---------- */
+(function () {
+  const areas = document.querySelectorAll('.hero, .ticker, .card-visual, .showcase-visual');
+  if (!areas.length || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => e.target.classList.toggle('anim-paused', !e.isIntersecting));
+  }, { rootMargin: '100px 0px' });
+  areas.forEach((el) => io.observe(el));
 })();
 
 /* ---------- Scroll reveal ---------- */

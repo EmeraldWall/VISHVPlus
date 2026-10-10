@@ -1,13 +1,21 @@
 /* VISHVPlus — editorial grid design system */
 
+/* Self-hosted fonts (SIL OFL 1.1, see assets/fonts/LICENSE.txt). Latin subset only. */
+@font-face { font-family: "Inter Tight"; src: url("fonts/inter-tight-var.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("fonts/jetbrains-mono-var.woff2") format("woff2"); font-weight: 100 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Instrument Serif"; src: url("fonts/instrument-serif-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+/* Metric-matched fallbacks so the swap to the web fonts barely moves text. */
+@font-face { font-family: "Inter Tight Fallback"; src: local("Arial"), local("Helvetica"), local("Liberation Sans"); size-adjust: 95%; ascent-override: 102%; descent-override: 25%; line-gap-override: 0%; }
+@font-face { font-family: "Mono Fallback"; src: local("Consolas"), local("Menlo"), local("DejaVu Sans Mono"), local("Liberation Mono"); size-adjust: 92%; }
+
 :root {
   --paper: #f1efea;
   --paper-2: #e9e6df;
   --paper-3: #dfdbd2;
   --ink: #151515;
   --ink-2: #3d3b37;
-  --muted: #6f6c66;
-  --faint: #9a968e;
+  --muted: #5f5c56;
+  --faint: #6a675f;
   --hair: rgba(21, 21, 21, 0.12);
   --hair-2: rgba(21, 21, 21, 0.2);
 
@@ -16,9 +24,9 @@
   --pdf: #2a14b8;
   --ok: #1f7a46;
 
-  --sans: "Inter Tight", "Segoe UI", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --sans: "Inter Tight", "Inter Tight Fallback", "Segoe UI", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
-  --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
+  --mono: "JetBrains Mono", "Mono Fallback", ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
 
   --frame: 1180px;
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -35,6 +43,8 @@ body {
   font-size: 15px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -121,6 +131,10 @@ h1, h2, h3, h4, p { margin: 0; }
   padding: 0 16px;
 }
 
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nav { background: var(--paper); }
+}
+
 .nav-brand img { height: 18px; width: auto; display: block; }
 
 .nav-links {
@@ -201,7 +215,8 @@ h1, h2, h3, h4, p { margin: 0; }
 .btn-line { background: transparent; color: var(--ink); }
 .btn-line:hover { background: var(--ink); color: var(--paper); }
 
-.badge-link img { height: 42px; width: auto; }
+.badge-link { display: inline-block; width: 150px; height: 42px; flex: none; }
+.badge-link img { width: 100%; height: 100%; object-fit: contain; object-position: left center; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 5px; }
 
@@ -541,7 +556,7 @@ h1, h2, h3, h4, p { margin: 0; }
 .clock-svg .tick { stroke: rgba(255, 255, 255, 0.45); stroke-width: 2; }
 .clock-svg .tick.major { stroke: #fff; stroke-width: 3.5; }
 .clock-svg .num { fill: rgba(255, 255, 255, 0.85); font: 600 15px var(--sans); text-anchor: middle; dominant-baseline: central; }
-.clock-svg .hand { stroke-linecap: round; transform-origin: 100px 100px; transition: transform 0.3s cubic-bezier(0.4, 2.2, 0.5, 1); }
+.clock-svg .hand { stroke-linecap: round; transform-box: view-box; transform-origin: 100px 100px; transition: transform 0.3s cubic-bezier(0.4, 2.2, 0.5, 1); }
 .clock-svg .hand-hour { stroke: #fff; stroke-width: 6; }
 .clock-svg .hand-minute { stroke: #fff; stroke-width: 4; }
 .clock-svg .hand-second { stroke: #ff5a4f; stroke-width: 2; }
@@ -563,7 +578,7 @@ h1, h2, h3, h4, p { margin: 0; }
 .font-sample { font-size: clamp(1.2rem, 3vw, 2rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
 .slider { height: 4px; background: var(--paper-3); position: relative; }
 .slider::after { content: ""; position: absolute; top: -5px; left: var(--v, 60%); width: 14px; height: 14px; border-radius: 50%; background: var(--clock); transform: translateX(-50%); animation: slide 5s ease-in-out infinite; }
-@keyframes slide { 50% { left: calc(var(--v, 60%) - 25%); } }
+@keyframes slide { 50% { transform: translateX(calc(-50% - 80px)); } }
 
 /* VisaryPDF app window */
 .win {
@@ -671,20 +686,22 @@ h1, h2, h3, h4, p { margin: 0; }
   transform: rotate(-1.5deg);
 }
 
-.scan-page i { display: block; height: 3%; background: #8a8478; filter: blur(1.4px); animation: sharpen 4.5s ease-in-out infinite; }
+.scan-page i { position: relative; display: block; height: 3%; background: #2b2925; }
+.scan-page i::after { content: ""; position: absolute; inset: 0; background: #8a8478; filter: blur(1.4px); animation: sharpen 4.5s ease-in-out infinite; animation-delay: inherit; }
+.scan-page i:nth-of-type(5)::before { content: ""; position: absolute; inset: -4px; background: rgba(255, 214, 10, 0.6); z-index: -1; opacity: 0; animation: hitGlow 4.5s ease-in-out infinite; animation-delay: inherit; }
 .scan-page i:nth-of-type(2) { width: 82%; animation-delay: 0.2s; }
 .scan-page i:nth-of-type(3) { animation-delay: 0.4s; }
 .scan-page i:nth-of-type(4) { width: 74%; animation-delay: 0.6s; }
-.scan-page i:nth-of-type(5) { animation-delay: 0.8s; animation-name: sharpenHit; }
+.scan-page i:nth-of-type(5) { animation-delay: 0.8s; }
 .scan-page i:nth-of-type(6) { width: 66%; animation-delay: 1s; }
 .scan-page i:nth-of-type(7) { animation-delay: 1.2s; }
 .scan-page i:nth-of-type(8) { width: 80%; animation-delay: 1.4s; }
 
-.scan-bar { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: #4f8bff; box-shadow: 0 0 16px 4px rgba(79, 139, 255, 0.6); animation: scanMove 4.5s ease-in-out infinite; }
+.scan-bar { position: absolute; left: 0; right: 0; top: 0; height: 100%; background: linear-gradient(to bottom, transparent calc(100% - 22px), rgba(79, 139, 255, 0.3) calc(100% - 6px), #4f8bff calc(100% - 2px)); transform: translateY(-100%); will-change: transform; animation: scanMove 4.5s ease-in-out infinite; }
 
-@keyframes scanMove { 0% { top: 0; opacity: 0; } 8% { opacity: 1; } 55% { top: 100%; opacity: 1; } 62%, 100% { top: 100%; opacity: 0; } }
-@keyframes sharpen { 0%, 12% { filter: blur(1.4px); background: #8a8478; } 45%, 88% { filter: none; background: #2b2925; } 100% { filter: blur(1.4px); background: #8a8478; } }
-@keyframes sharpenHit { 0%, 12% { filter: blur(1.4px); background: #8a8478; box-shadow: none; } 45%, 88% { filter: none; background: #2b2925; box-shadow: 0 0 0 4px rgba(255, 214, 10, 0.6); } 100% { filter: blur(1.4px); background: #8a8478; box-shadow: none; } }
+@keyframes scanMove { 0% { transform: translateY(-100%); opacity: 0; } 8% { opacity: 1; } 55% { transform: translateY(0); opacity: 1; } 62%, 100% { transform: translateY(0); opacity: 0; } }
+@keyframes sharpen { 0%, 12% { opacity: 1; } 45%, 88% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes hitGlow { 0%, 12% { opacity: 0; } 45%, 88% { opacity: 1; } 100% { opacity: 0; } }
 
 .search-pill {
   position: absolute;
@@ -795,6 +812,16 @@ form.support-form input:focus,
 form.support-form select:focus,
 form.support-form textarea:focus { outline: 2px solid var(--ink); outline-offset: -1px; }
 form.support-form textarea { min-height: 140px; resize: vertical; }
+form.support-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 38px;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%);
+  background-position: calc(100% - 19px) 50%, calc(100% - 14px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
 form.support-form button { justify-self: start; }
 
 /* ---------- CTA ---------- */
@@ -818,7 +845,7 @@ form.support-form button { justify-self: start; }
 .footer-grid > div { background: var(--paper); padding: 28px 24px; }
 .footer-brand img { height: 24px; width: auto; margin-bottom: 14px; }
 .footer-brand p { color: var(--muted); font-size: 13px; max-width: 260px; }
-.footer-col h4 { color: var(--faint); margin-bottom: 14px; font-weight: 400; }
+.footer-col h2 { font-size: 11px;  color: var(--faint); margin-bottom: 14px; font-weight: 400; }
 .footer-col a { display: block; font-size: 13.5px; color: var(--ink-2); margin-bottom: 8px; }
 .footer-col a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
@@ -884,9 +911,17 @@ html.js .reveal.in-view { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html.js .reveal { opacity: 1; transform: none; }
-  .scan-page i { filter: none; background: #2b2925; }
+  .scan-page i::after, .scan-page i::before { display: none; }
   .sig-path { stroke-dashoffset: 0; }
   .out .row { opacity: 1; }
   .rbar { transform: scaleX(1); }
   .bbar i { transform: scaleX(1); }
 }
+
+/* ---------- Performance ---------- */
+
+/* Off-screen sections skip layout and paint until scrolled near (Chromium, Firefox 125+). */
+main > .section + .section { content-visibility: auto; contain-intrinsic-size: auto 900px; }
+
+/* Infinite animations are paused while their area is off screen (toggled by main.js). */
+.anim-paused, .anim-paused *, .anim-paused *::before, .anim-paused *::after { animation-play-state: paused !important; }
